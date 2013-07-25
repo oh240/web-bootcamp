@@ -1,0 +1,1 @@
+CREATE DATABASE webbootcamp CHARACTER SET utf8;
