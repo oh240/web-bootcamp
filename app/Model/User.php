@@ -28,12 +28,11 @@ class User extends AppModel {
 					//'last' => false, // Stop validation after this rule
 					//'on' => 'create', // Limit validation to 'create' or 'update' operations
 					),
+					array(
+						'rule' => array('isUnique'),
+						'message' => '既に登録されているユーザー名です',
+					),
 				),
-				'Unique' => array(
-					'rule' => array('isUnique'),
-					'message' => '既に登録されているユーザー名です',
-				),
-				
 			'password' => array(
 				'notempty' => array(
 					'rule' => array('notempty'),

@@ -24,7 +24,7 @@
 				array("class"=>'btn btn-success btn-large'));
 			?>
 			<?php
-				echo $this->Form->Submit('ログイン',array('class'=>'btn btn-primary btn-large','div'=>false));
+				echo $this->Form->submit('ログイン',array('class'=>'btn btn-primary btn-large','div'=>false));
 			?>
 			<?php $this->Form->end();?>
 

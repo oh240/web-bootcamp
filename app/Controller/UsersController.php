@@ -26,6 +26,14 @@ class UsersController extends AppController {
 		if ($this->request->is('Post')) {
 			
 			if ($this->Auth->login()) {
+				$options = array(
+					'conditions' => 
+						array ('User.username' => $this->request->data['User']['username'])
+				);
+				
+				$sessionKey = $this->User->find('first',$options);
+				$this->Session->write('Login.Id',$sessionKey['User']['id']);
+				
 				return $this->redirect(array('action'=>'index'));
 			}
 			else {
@@ -38,6 +46,8 @@ class UsersController extends AppController {
 	
 	public function logout() {
 		$this->Auth->logout();
+		$this->Session->setFlash('ログアウト完了');
+		$this->Session->destroy();
 		return $this->redirect(array('action'=>'login'));
 	}
 

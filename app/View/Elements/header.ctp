@@ -36,11 +36,28 @@
           </button>
           <a class="brand" href="#">Web BootCamp</a>
           <div class="nav-collapse collapse">
-            <form class="navbar-form pull-right">
-            <?php echo $this->Html->link
-							('ログアウト',array('controller'=>'users','action'=>'logout'),array('class'=>'btn btn-success'));
-						?>
-						</form>
+            <div class="pull-right">
+							
+							<?php if($this->Session->check('Login.Id')):?>
+								
+		            <?php echo $this->Html->link
+									('ログアウト',array('controller'=>'users','action'=>'logout'),array('class'=>'btn btn-success'));
+								?>
+								
+							<?php else :?>
+								
+		            <?php echo $this->Html->link
+									('ログイン',array('controller'=>'users','action'=>'login'),array('class'=>'btn btn-primary'));
+								?>
+								
+		            <?php echo $this->Html->link
+									('新規登録',array('controller'=>'users','action'=>'add'),array('class'=>'btn btn-success'));
+								?>
+								
+							<?php endif ;?>
+							
+
+					</div>
           </div><!--/.nav-collapse -->
         </div>
       </div>
