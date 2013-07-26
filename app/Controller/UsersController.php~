@@ -35,7 +35,7 @@ class UsersController extends AppController {
 				$this->Session->write('Login.Id',$sessionKey['User']['id']);
 				$this->Session->write('Login.Nickname',$sessionKey['User']['nickname']);
 				
-				//var_dump($this->Session->read('Login.'));
+				//var_dump($this->Session->read('Login.Id'));
 				
 				return $this->redirect(array('action'=>'index'));
 			}

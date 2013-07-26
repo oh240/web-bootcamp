@@ -1,0 +1,108 @@
+2013-07-26 14:41:27 Error: [MissingDatasourceConfigException] The datasource configuration "default" was not found in database.php
+Exception Attributes: array (
+  'config' => 'default',
+)
+Request URL: /cake/web-bootcamp/users/login
+Stack Trace:
+#0 /var/www/cake/web-bootcamp/lib/Cake/Model/ConnectionManager.php(93): ConnectionManager::_getConnectionObject('default')
+#1 /var/www/cake/web-bootcamp/lib/Cake/Model/Model.php(3221): ConnectionManager::getDataSource('default')
+#2 /var/www/cake/web-bootcamp/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#3 /var/www/cake/web-bootcamp/lib/Cake/Model/Model.php(3243): Model->setSource('users')
+#4 /var/www/cake/web-bootcamp/lib/Cake/Model/Model.php(1318): Model->getDataSource()
+#5 /var/www/cake/web-bootcamp/lib/Cake/View/Helper/FormHelper.php(199): Model->schema()
+#6 /var/www/cake/web-bootcamp/lib/Cake/View/Helper/FormHelper.php(453): FormHelper->_introspectModel('User', 'fields')
+#7 /var/www/cake/web-bootcamp/app/View/Users/login.ctp(8): FormHelper->create('User', Array)
+#8 /var/www/cake/web-bootcamp/lib/Cake/View/View.php(945): include('/var/www/cake/w...')
+#9 /var/www/cake/web-bootcamp/lib/Cake/View/View.php(907): View->_evaluate('/var/www/cake/w...', Array)
+#10 /var/www/cake/web-bootcamp/lib/Cake/View/View.php(471): View->_render('/var/www/cake/w...')
+#11 /var/www/cake/web-bootcamp/lib/Cake/Controller/Controller.php(948): View->render(NULL, NULL)
+#12 /var/www/cake/web-bootcamp/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#13 /var/www/cake/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#14 /var/www/cake/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2013-07-26 14:44:51 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[28000] [1045] Access denied for user \'roor\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /cake/web-bootcamp/users/login
+Stack Trace:
+#0 /var/www/cake/web-bootcamp/lib/Cake/Model/Datasource/DboSource.php(262): Mysql->connect()
+#1 /var/www/cake/web-bootcamp/lib/Cake/Model/ConnectionManager.php(107): DboSource->__construct(Array)
+#2 /var/www/cake/web-bootcamp/lib/Cake/Model/Model.php(3221): ConnectionManager::getDataSource('default')
+#3 /var/www/cake/web-bootcamp/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#4 /var/www/cake/web-bootcamp/lib/Cake/Model/Model.php(3243): Model->setSource('users')
+#5 /var/www/cake/web-bootcamp/lib/Cake/Model/Model.php(1318): Model->getDataSource()
+#6 /var/www/cake/web-bootcamp/lib/Cake/View/Helper/FormHelper.php(199): Model->schema()
+#7 /var/www/cake/web-bootcamp/lib/Cake/View/Helper/FormHelper.php(453): FormHelper->_introspectModel('User', 'fields')
+#8 /var/www/cake/web-bootcamp/app/View/Users/login.ctp(8): FormHelper->create('User', Array)
+#9 /var/www/cake/web-bootcamp/lib/Cake/View/View.php(945): include('/var/www/cake/w...')
+#10 /var/www/cake/web-bootcamp/lib/Cake/View/View.php(907): View->_evaluate('/var/www/cake/w...', Array)
+#11 /var/www/cake/web-bootcamp/lib/Cake/View/View.php(471): View->_render('/var/www/cake/w...')
+#12 /var/www/cake/web-bootcamp/lib/Cake/Controller/Controller.php(948): View->render(NULL, NULL)
+#13 /var/www/cake/web-bootcamp/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#14 /var/www/cake/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 /var/www/cake/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-07-26 14:44:52 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[28000] [1045] Access denied for user \'roor\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /cake/web-bootcamp/users/login
+Stack Trace:
+#0 /var/www/cake/web-bootcamp/lib/Cake/Model/Datasource/DboSource.php(262): Mysql->connect()
+#1 /var/www/cake/web-bootcamp/lib/Cake/Model/ConnectionManager.php(107): DboSource->__construct(Array)
+#2 /var/www/cake/web-bootcamp/lib/Cake/Model/Model.php(3221): ConnectionManager::getDataSource('default')
+#3 /var/www/cake/web-bootcamp/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#4 /var/www/cake/web-bootcamp/lib/Cake/Model/Model.php(3243): Model->setSource('users')
+#5 /var/www/cake/web-bootcamp/lib/Cake/Model/Model.php(1318): Model->getDataSource()
+#6 /var/www/cake/web-bootcamp/lib/Cake/View/Helper/FormHelper.php(199): Model->schema()
+#7 /var/www/cake/web-bootcamp/lib/Cake/View/Helper/FormHelper.php(453): FormHelper->_introspectModel('User', 'fields')
+#8 /var/www/cake/web-bootcamp/app/View/Users/login.ctp(8): FormHelper->create('User', Array)
+#9 /var/www/cake/web-bootcamp/lib/Cake/View/View.php(945): include('/var/www/cake/w...')
+#10 /var/www/cake/web-bootcamp/lib/Cake/View/View.php(907): View->_evaluate('/var/www/cake/w...', Array)
+#11 /var/www/cake/web-bootcamp/lib/Cake/View/View.php(471): View->_render('/var/www/cake/w...')
+#12 /var/www/cake/web-bootcamp/lib/Cake/Controller/Controller.php(948): View->render(NULL, NULL)
+#13 /var/www/cake/web-bootcamp/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#14 /var/www/cake/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 /var/www/cake/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-07-26 15:34:01 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /cake/web-bootcamp/img/glyphicons-halflings.png
+Stack Trace:
+#0 /var/www/cake/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-26 15:36:29 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /cake/web-bootcamp/img/glyphicons-halflings.png
+Stack Trace:
+#0 /var/www/cake/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-26 15:42:08 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /cake/web-bootcamp/img/glyphicons-halflings.png
+Stack Trace:
+#0 /var/www/cake/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-26 16:03:19 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /cake/web-bootcamp/img/glyphicons-halflings.png
+Stack Trace:
+#0 /var/www/cake/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

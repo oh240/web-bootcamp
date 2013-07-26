@@ -2,8 +2,9 @@
 			<br>
 			<br>
 			<?php	
-				echo $this->Form->create('User',array('class'=>'form-signin'));
-			?>
+				echo $this->Form->create('User',array('class'=>'form-signin'
+			));
+				?>
 			<br>
       <h2 class="form-signin-heading">ログイン</h2>
 			
