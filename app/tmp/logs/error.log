@@ -59,3 +59,118 @@ Stack Trace:
 #3 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2013-07-26 04:00:02 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/cake/web-bootcamp/app/View/Users/logout.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/cake/web-bootcamp/app/View/Users/logout.ctp',
+)
+Request URL: /cake/web-bootcamp/users/logout
+Stack Trace:
+#0 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Controller/Controller.php(948): View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Applications/MAMP/htdocs/cake/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-26 04:00:44 Error: Fatal Error (4): syntax error, unexpected ';' in [/Applications/MAMP/htdocs/cake/web-bootcamp/app/Controller/UsersController.php, line 41]
+2013-07-26 04:00:44 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /cake/web-bootcamp/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 41)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 41, Array)
+#2 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 41, Array)
+#3 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-26 04:04:51 Error: Fatal Error (4): syntax error, unexpected ';' in [/Applications/MAMP/htdocs/cake/web-bootcamp/app/View/Users/login.ctp, line 17]
+2013-07-26 04:04:51 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /cake/web-bootcamp/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 17)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 17, Array)
+#2 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 17, Array)
+#3 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-26 04:06:35 Error: [MissingActionException] Action UsersController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'js',
+)
+Request URL: /cake/web-bootcamp/users/js/bootstrap.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/cake/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-26 04:06:55 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/Applications/MAMP/htdocs/cake/web-bootcamp/app/View/Users/login.ctp, line 32]
+2013-07-26 04:06:55 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /cake/web-bootcamp/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 32)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 32, Array)
+#2 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 32, Array)
+#3 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-26 04:07:17 Error: Fatal Error (4): syntax error, unexpected ')' in [/Applications/MAMP/htdocs/cake/web-bootcamp/app/View/Users/login.ctp, line 32]
+2013-07-26 04:07:17 Error: [FatalErrorException] syntax error, unexpected ')'
+Request URL: /cake/web-bootcamp/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 32)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 32, Array)
+#2 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 32, Array)
+#3 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-26 04:07:18 Error: Fatal Error (4): syntax error, unexpected ')' in [/Applications/MAMP/htdocs/cake/web-bootcamp/app/View/Users/login.ctp, line 32]
+2013-07-26 04:07:18 Error: [FatalErrorException] syntax error, unexpected ')'
+Request URL: /cake/web-bootcamp/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 32)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 32, Array)
+#2 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 32, Array)
+#3 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-26 04:07:23 Error: [MissingActionException] Action UsersController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'js',
+)
+Request URL: /cake/web-bootcamp/users/js/bootstrap.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/cake/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-26 04:07:50 Error: [MissingActionException] Action UsersController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'js',
+)
+Request URL: /cake/web-bootcamp/users/js/bootstrap.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/cake/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-26 04:12:53 Error: Fatal Error (4): syntax error, unexpected ';' in [/Applications/MAMP/htdocs/cake/web-bootcamp/app/View/Users/login.ctp, line 25]
+2013-07-26 04:12:53 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /cake/web-bootcamp/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 25)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 25, Array)
+#2 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 25, Array)
+#3 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-26 04:16:29 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/Applications/MAMP/htdocs/cake/web-bootcamp/app/View/Users/login.ctp, line 9]
+2013-07-26 04:16:29 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /cake/web-bootcamp/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 9)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 9, Array)
+#2 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 9, Array)
+#3 /Applications/MAMP/htdocs/cake/web-bootcamp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
