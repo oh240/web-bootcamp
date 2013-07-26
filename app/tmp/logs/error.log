@@ -1,0 +1,9 @@
+2013-07-26 03:07:34 Error: [MissingControllerException] Controller class Users\Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Users\\Controller',
+  'plugin' => NULL,
+)
+Request URL: /cake/web-bootcamp/users%5C
+Stack Trace:
+#0 /Applications/MAMP/htdocs/cake/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
