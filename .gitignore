@@ -5,6 +5,7 @@
 /build
 /dist
 /tags
+/app/tmp/logs/error.log 
 
 # OS generated files #
 ######################
