@@ -13,7 +13,32 @@ class UsersController extends AppController {
  *
  * @var array
  */
+	
+	public $uses = array('User');
+	
 	public $components = array('Paginator');
+	
+	public function beforeFilter() {
+		$this->Auth->allow('add');
+	}
+	
+	public function login() {
+		if ($this->request->is('Post')) {
+			
+			if ($this->Auth->login()) {
+				return $this->redirect(array('action'=>'index'));
+			}
+			else {
+				$this->Session->setFlash('ユーザー名かパスワードを間違えています!!');
+			}
+			
+		}
+
+	}
+	
+	public function logout() {
+		$this->Auth->logout();
+	}
 
 /**
  * index method
