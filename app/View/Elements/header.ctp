@@ -35,29 +35,30 @@
             <span class="icon-bar"></span>
           </button>
           <a class="brand" href="#">Web BootCamp</a>
-          <div class="nav-collapse collapse">
+          <div class="nav-collapse collapse clearfix">
             <div class="pull-right">
 							
 							<?php if($this->Session->check('Login.Id')):?>
 							
-								<span class="white">
-									現在<?php echo $this->Session->read('Login.Nickname');?>さんでログインしています
-								</span>
-							
+								<div class="white pull-left">
+									ようこそ
+									<?php echo $this->Session->read('Login.Nickname');?>
+									さん
+								</div>
 								
 		            <?php echo $this->Html->link
-									('ログアウト',array('controller'=>'users','action'=>'logout'),array('class'=>'btn btn-success'));
+									('ログアウト',array('controller'=>'users','action'=>'logout'),array('class'=>'btn btn-info btn-mini'));
 								?>
 								
 							<?php else :?>
 							
 								
 		            <?php echo $this->Html->link
-									('ログイン',array('controller'=>'users','action'=>'login'),array('class'=>'btn btn-primary'));
+									('ログイン',array('controller'=>'users','action'=>'login'),array('class'=>'btn btn-primary btn-mini'));
 								?>
 								
 		            <?php echo $this->Html->link
-									('新規登録',array('controller'=>'users','action'=>'add'),array('class'=>'btn btn-success'));
+									('新規登録',array('controller'=>'users','action'=>'add'),array('class'=>'btn btn-success btn-mini'));
 								?>
 								
 							<?php endif ;?>

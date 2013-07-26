@@ -26,18 +26,13 @@ class UsersController extends AppController {
 		if ($this->request->is('Post')) {
 			
 			if ($this->Auth->login()) {
-				$options = array(
-					'conditions' => 
-						array ('User.username' => $this->request->data['User']['username'])
-				);
 				
-				$sessionKey = $this->User->find('first',$options);
+				$sessionKey = $this->User->LoginUser($this->request->data['User']['username']);
+				
 				$this->Session->write('Login.Id',$sessionKey['User']['id']);
 				$this->Session->write('Login.Nickname',$sessionKey['User']['nickname']);
 				
-				//var_dump($this->Session->read('Login.'));
-				
-				return $this->redirect(array('action'=>'index'));
+				return $this->redirect(array('controller'=>'projects','action'=>'index'));
 			}
 			else {
 				$this->Session->setFlash('ユーザー名かパスワードを間違えています!!');
@@ -60,6 +55,7 @@ class UsersController extends AppController {
  * @return void
  */
 	public function index() {
+		$this->set('title_for_layout', 'ユーザー一覧');
 		$this->User->recursive = 0;
 		$this->set('users', $this->Paginator->paginate());
 	}

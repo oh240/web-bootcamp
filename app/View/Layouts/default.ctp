@@ -10,6 +10,9 @@
 			</header>
 		<?php endif;?>
 		
-		<?php echo $this->fetch('content'); ?>
+		<div id="main">
+				<?php echo $this->fetch('content'); ?>
+		</div>
+		
 	</div>
 	<?php echo $this->element('footer') ;?>

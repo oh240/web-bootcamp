@@ -31,7 +31,7 @@ class User extends AppModel {
 					array(
 						'rule' => array('isUnique'),
 						'message' => '既に登録されているユーザー名です',
-					),
+						),
 				),
 			'password' => array(
 				'notempty' => array(
@@ -69,4 +69,12 @@ class User extends AppModel {
 		}
 		return true ;
 	}
+	
+	function LoginUser ($key) {
+		$options = array(
+			'conditions' => array ('User.username' => $key )
+		);
+		return $this->find('first',$options);
+	}
+	
 }

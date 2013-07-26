@@ -4,8 +4,14 @@ body {
   background-color: #fDfDfD;
 }
 
+.navbar-inner .btn{
+	margin-top: 7px;
+}
+
 .white {
+	font-size: 14px;
 	color: #FFF;
+	margin: 7px 30px 0 0;
 }
 
 .form-signin {
