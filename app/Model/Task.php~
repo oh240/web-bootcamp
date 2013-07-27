@@ -61,7 +61,7 @@ class Task extends AppModel {
 		),
 	);
 	
-	/*
+	
 	public $belongsTo = array(
 		'Todo' => array(
 			'className' => 'Todo',
@@ -71,17 +71,5 @@ class Task extends AppModel {
 			'order' => ''
 		)
 	);
-	*/
-	
-	public $hasMany = array(
-		'Todo' => array(
-			'className' => 'Todo',
-			'foreignKey' => 'todo_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
-	
 	
 }

@@ -13,7 +13,10 @@ class TaskTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.task'
+		'app.task',
+		'app.todo',
+		'app.project',
+		'app.user'
 	);
 
 /**

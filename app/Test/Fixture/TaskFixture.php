@@ -36,8 +36,8 @@ class TaskFixture extends CakeTestFixture {
 			'user_id' => 1,
 			'todo_id' => 1,
 			'status' => 1,
-			'created' => '2013-07-27 11:44:20',
-			'modified' => '2013-07-27 11:44:20'
+			'created' => '2013-07-27 15:38:03',
+			'modified' => '2013-07-27 15:38:03'
 		),
 	);
 

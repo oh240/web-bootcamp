@@ -3,6 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * Todo Model
  *
+ * @property Project $Project
+ * @property Task $Task
  */
 class Todo extends AppModel {
 
@@ -39,6 +41,16 @@ class Todo extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'project_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 		'status' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -50,8 +62,14 @@ class Todo extends AppModel {
 			),
 		),
 	);
-	
-	
+
+	//The Associations below have been created with all possible keys, those that are not needed can be removed
+
+/**
+ * belongsTo associations
+ *
+ * @var array
+ */
 	public $belongsTo = array(
 		'Project' => array(
 			'className' => 'Project',
@@ -61,6 +79,26 @@ class Todo extends AppModel {
 			'order' => ''
 		)
 	);
-	
-	
+
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+	public $hasMany = array(
+		'Task' => array(
+			'className' => 'Task',
+			'foreignKey' => 'todo_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+
 }

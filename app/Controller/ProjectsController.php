@@ -51,17 +51,18 @@ public $uses = array('User','Project','Task','Todo');
 		if (!$this->Project->exists($id)) {
 			throw new NotFoundException(__('Invalid project'));
 		}
+		
 		$options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
-		$this->Todo->recursive = 2;	
 		$this->set('project', $this->Project->find('first', $options));
-				
+
+		$this->Todo->recursive = 2;
+	
 		$options = array(
 				'conditions' => array('Todo.project_id'),
 		);
 		
-		$this->Todo->recursive = 2;
 		$this->set('todos',$this->Todo->find('all', $options));
-		
+	
 	}
 
 /**

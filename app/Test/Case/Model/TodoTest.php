@@ -13,7 +13,10 @@ class TodoTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.todo'
+		'app.todo',
+		'app.project',
+		'app.user',
+		'app.task'
 	);
 
 /**

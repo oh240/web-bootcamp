@@ -14,6 +14,7 @@ class TodoFixture extends CakeTestFixture {
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 10, 'key' => 'primary'),
 		'name' => array('type' => 'string', 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'user_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 10),
+		'project_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 10),
 		'created' => array('type' => 'datetime', 'null' => false, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => false, 'default' => null),
 		'status' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 1),
@@ -33,8 +34,9 @@ class TodoFixture extends CakeTestFixture {
 			'id' => 1,
 			'name' => 'Lorem ipsum dolor sit amet',
 			'user_id' => 1,
-			'created' => '2013-07-27 11:44:01',
-			'modified' => '2013-07-27 11:44:01',
+			'project_id' => 1,
+			'created' => '2013-07-27 15:37:38',
+			'modified' => '2013-07-27 15:37:38',
 			'status' => 1
 		),
 	);
