@@ -1,3 +1,9 @@
+
+<?php if($title_for_layout !== "管理しているプロジェクト一覧") :?>
+	<h2>ProjectName01</h2>
+	<hr>
+<?php endif;?>
+
 <ul class="nav nav-pills">
 
 	<li class="active">

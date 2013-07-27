@@ -1,5 +1,4 @@
 <h3>あなたの管理するプロジェクト一覧</h3>
-
 <div class="well">
 	
 	<?php foreach($projects as $data): ?>

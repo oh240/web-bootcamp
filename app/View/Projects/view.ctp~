@@ -23,7 +23,7 @@
 						array('value'=> $todo['Project']['User']['id']));
 			?>
 			
-			<?php //var_dump($todo['Task']); ?>
+			<?php var_dump($todo['Task']); ?>
 		
 			<legend><strong>新規メインタスクの追加</strong></legend>
 		
