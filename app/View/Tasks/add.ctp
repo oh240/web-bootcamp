@@ -1,20 +1,22 @@
 <div class="tasks form">
 <?php echo $this->Form->create('Task'); ?>
-	<fieldset>
-		<legend><?php echo __('Add Task'); ?></legend>
-	<?php
-		echo $this->Form->input('name');
-		echo $this->Form->input('user_id');
-		echo $this->Form->input('todo_id');
-		echo $this->Form->input('status');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
 
-		<li><?php echo $this->Html->link(__('List Tasks'), array('action' => 'index')); ?></li>
-	</ul>
+	<?php echo $this->Form->hidden('user_id',
+		array('value'=>$this->Session->read('Login.Id')));
+	?>
+
+	<?php echo $this->Form->hidden('todo_id',
+		array('value'=> 2 ));
+	?>
+
+	<?php echo $this->Form->input('name',
+		array('label'=>false));
+	?>
+	
+	<?php echo $this->Form->submit('サブタスクの追加',
+			array('class'=>'btn btn-small btn-success'));
+	?>
+	
+<?php $this->Form->end();?>
 </div>
+

@@ -59,7 +59,7 @@ class Project extends AppModel {
 			'order' => ''
 		)
 	);
-	
+
 	public function serchProjects($id) {
 		$options = array(
 			'conditions' => array ('Project.user_id' => $id)

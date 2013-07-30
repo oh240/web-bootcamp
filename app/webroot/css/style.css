@@ -58,6 +58,7 @@ textarea {
 }
 
 .add_subtask {
+	width: 65%;
 	padding: 10px 20px;
 	border-radius: 3px;
 	background-color:#EEE;
@@ -65,7 +66,7 @@ textarea {
 }
 
 .add_subtask input[type="text"]{
-	width: 65%;
+	width: 90%;
 }
 
 .subtasks  {

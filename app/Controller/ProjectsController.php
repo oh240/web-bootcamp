@@ -9,26 +9,26 @@ App::uses('AppController', 'Controller');
 class ProjectsController extends AppController {
 
 
-public $uses = array('User','Project','Task','Todo');
-/**
- * Components
- *
- * @var array
- */
+	public $uses = array('User','Project','Task','Todo');
+	/**
+	 * Components
+	 *
+	 * @var array
+	 */
 	public $components = array('Paginator');
 
-/**
- * index method
- *
- * @return void
- */
+	/**
+	 * index method
+	 *
+	 * @return void
+	 */
 	public function index() {
-		
+
 		$this->set('title_for_layout', '管理しているプロジェクト一覧');
 		$this->Project->recursive = 0;
 		$options = $this->Project->serchProjects($this->Session->read('Login.Id'));
 		$this->set('projects',$this->Project->find('all',$options));
-		
+
 		if ($this->request->is('post')) {
 			$this->Project->create();
 			if ($this->Project->save($this->request->data)) {
@@ -40,38 +40,38 @@ public $uses = array('User','Project','Task','Todo');
 		}
 	}
 
-/**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
+	/**
+	 * view method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
 	public function view($id = null) {
 		if (!$this->Project->exists($id)) {
 			throw new NotFoundException(__('Invalid project'));
 		}
-		
+
 		$options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
 		$this->set('project', $this->Project->find('first', $options));
 
 		$this->Todo->recursive = 2;
-	
+
 		$options = array(
 				'conditions' => array('Todo.project_id'),
 		);
-		
+
 		$this->set('todos',$this->Todo->find('all', $options));
-	
+
 	}
 
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
+	/**
+	 * edit method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
 	public function edit($id = null) {
 		if (!$this->Project->exists($id)) {
 			throw new NotFoundException(__('Invalid project'));
@@ -91,13 +91,13 @@ public $uses = array('User','Project','Task','Todo');
 		$this->set(compact('users'));
 	}
 
-/**
- * delete method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
+	/**
+	 * delete method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
 	public function delete($id = null) {
 		$this->Project->id = $id;
 		if (!$this->Project->exists()) {
