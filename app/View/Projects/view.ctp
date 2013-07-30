@@ -19,7 +19,7 @@
 
 <?php foreach ($todo['Task'] as $task) :?>
 <li>
-<?php echo $task['name'];?>
+	<?php echo $task['name'];?>
 </li>
 
 <?php endforeach ;?>

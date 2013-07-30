@@ -34,7 +34,7 @@ class TodosController extends AppController {
  * @param string $id
  * @return void
  */
-	public function view($id = null) {
+	public function view($id) {
 		if (!$this->Todo->exists($id)) {
 			throw new NotFoundException(__('Invalid todo'));
 		}

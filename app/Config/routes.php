@@ -31,12 +31,36 @@
  * ...and connect the rest of 'Pages' controller's urls.
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
-/*
-	Router::connect('/projects/:id', 
+
+	Router::connect('/projects/:id/', 
 			array('controller' =>'projects','action'=>'view'),
-			array('id'=>'[0-9]+')
+			array('pass'=> array('id'),'id'=>'[0-9]+')
 	);
-*/
+
+	Router::connect('/projects/:id/edit', 
+			array('controller' =>'projects','action'=>'edit'),
+			array('pass'=> array('id'),'id'=>'[0-9]+')
+	);
+
+	Router::connect('/projects/:id/delete', 
+			array('controller' =>'projects','action'=>'delete'),
+			array('pass'=> array('id'),'id'=>'[0-9]+')
+	);
+
+
+	Router::connect('/projects/:project_id/todos/:id', 
+			array('controller' =>'todos','action'=>'view'),
+			array('pass'=> array('project_id','id'),
+						'project_id'=>'[0-9]+','id'=>'[0-9]+'
+			)
+	);
+
+	Router::connect('/projects/:project_id/todos/:todo_id/tasks/:action', 
+			array('controller' =>'tasks'),
+			array('pass'=> array('project_id','todo_id'),
+						'project_id'=>'[0-9]+','todo_id'=>'[0-9]+'
+		  )
+	);
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on
@@ -48,5 +72,5 @@
  * Load the CakePHP default routes. Only remove this if you do not want to use
  * the built-in default routes.
  */
-	require CAKE . 'Config' . DS . 'routes.php';
+//	require CAKE . 'Config' . DS . 'routes.php';
 	

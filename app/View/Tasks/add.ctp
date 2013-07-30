@@ -6,7 +6,7 @@
 	?>
 
 	<?php echo $this->Form->hidden('todo_id',
-		array('value'=> 2 ));
+		array('value'=> $this->params['todo_id'] ));
 	?>
 
 	<?php echo $this->Form->input('name',
