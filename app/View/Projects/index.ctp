@@ -5,7 +5,8 @@
 	<?php foreach($projects as $data): ?>
 		<div class="clearfix">
 			<h4>
-				<?php echo $this->Html->link($data['Project']['name'],array('action'=>'view',$data['Project']['id']));?>
+				<?php echo $this->Html->link($data['Project']['name'],
+							array('action'=>'view','id'=>$data['Project']['id']));?>
 			</h4>
 			<div class="pull-right">
 						登録者:

@@ -58,7 +58,7 @@ class ProjectsController extends AppController {
 		$this->Todo->recursive = 2;
 
 		$options = array(
-				'conditions' => array('Todo.project_id'),
+				'conditions' => array('Todo.project_id'=>$id),
 		);
 
 		$this->set('todos',$this->Todo->find('all', $options));

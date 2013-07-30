@@ -32,7 +32,7 @@
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
-	Router::connect('/projects/:id/', 
+	Router::connect('/projects/:id', 
 			array('controller' =>'projects','action'=>'view'),
 			array('pass'=> array('id'),'id'=>'[0-9]+')
 	);
@@ -44,6 +44,18 @@
 
 	Router::connect('/projects/:id/delete', 
 			array('controller' =>'projects','action'=>'delete'),
+			array('pass'=> array('id'),'id'=>'[0-9]+')
+	);
+
+
+	Router::connect('/projects/', 
+			array('controller' =>'projects','action'=>'index'),
+			array('pass'=> array('id'),'id'=>'[0-9]+')
+	);
+
+
+	Router::connect('/projects/index/', 
+			array('controller' =>'projects','action'=>'index'),
 			array('pass'=> array('id'),'id'=>'[0-9]+')
 	);
 
@@ -62,6 +74,8 @@
 		  )
 	);
 
+
+
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.
@@ -72,5 +86,5 @@
  * Load the CakePHP default routes. Only remove this if you do not want to use
  * the built-in default routes.
  */
-//	require CAKE . 'Config' . DS . 'routes.php';
+	require CAKE . 'Config' . DS . 'routes.php';
 	
