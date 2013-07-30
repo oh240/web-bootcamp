@@ -1426,3 +1426,541 @@ Stack Trace:
 #3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2013-07-30 13:53:31 Error: [MissingActionException] Action ProjectsController::1() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '1',
+)
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 13:53:37 Error: [MissingActionException] Action ProjectsController::2() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '2',
+)
+Request URL: /cake_dev/web-bootcamp/projects/2
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 13:54:34 Error: [MissingActionException] Action ProjectsController::2() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '2',
+)
+Request URL: /cake_dev/web-bootcamp/projects/2
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 13:54:39 Error: [MissingActionException] Action ProjectsController::2() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '2',
+)
+Request URL: /cake_dev/web-bootcamp/projects/2
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 13:54:48 Error: [MissingActionException] Action ProjectsController::view1() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => 'view1',
+)
+Request URL: /cake_dev/web-bootcamp/projects/view1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 13:54:51 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/view/
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 13:58:24 Error: [MissingActionException] Action ProjectsController::1() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '1',
+)
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 13:58:26 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1/
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 13:58:29 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/2/
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 13:58:32 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/3/
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 13:58:46 Error: [MissingActionException] Action ProjectsController::3() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '3',
+)
+Request URL: /cake_dev/web-bootcamp/projects/3/
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 13:58:54 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/3/
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 13:59:29 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1/
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:02:14 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1/
+Stack Trace:
+#0 [internal function]: ProjectsController->view('id')
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:02:15 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1/
+Stack Trace:
+#0 [internal function]: ProjectsController->view('id')
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:02:26 Error: Fatal Error (4): syntax error, unexpected ':', expecting ')' in [/var/www/html/cake_dev/web-bootcamp/app/Config/routes.php, line 36]
+2013-07-30 14:02:26 Error: [FatalErrorException] syntax error, unexpected ':', expecting ')'
+Request URL: /cake_dev/web-bootcamp/projects/1/
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 36)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 36, Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 36, Array)
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-30 14:04:44 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1/
+Stack Trace:
+#0 [internal function]: ProjectsController->view('id')
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:04:48 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 [internal function]: ProjectsController->view('id')
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:04:52 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1/
+Stack Trace:
+#0 [internal function]: ProjectsController->view('id')
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:12:04 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1/
+Stack Trace:
+#0 [internal function]: ProjectsController->view('id')
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:12:05 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1/
+Stack Trace:
+#0 [internal function]: ProjectsController->view('id')
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:12:07 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 [internal function]: ProjectsController->view('id')
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:12:14 Error: [MissingControllerException] Controller class Projects1Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Projects1Controller',
+  'plugin' => NULL,
+)
+Request URL: /cake_dev/web-bootcamp/projects1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-30 14:12:21 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /cake_dev/web-bootcamp/projects//1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-30 14:12:26 Error: [MissingActionException] Action ProjectsController::v() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => 'v',
+)
+Request URL: /cake_dev/web-bootcamp/projects/v/1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 14:14:25 Error: [MissingControllerException] Controller class Projects1Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Projects1Controller',
+  'plugin' => NULL,
+)
+Request URL: /cake_dev/web-bootcamp/projects1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-30 14:14:29 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-30 14:14:35 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /cake_dev/web-bootcamp/projects/1/
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-30 14:16:06 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1/
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:16:09 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:17:21 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:18:13 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:18:32 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:18:57 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:18:58 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:18:59 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:18:59 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:18:59 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:20:48 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:21:05 Error: [MissingActionException] Action ProjectsController::1() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '1',
+)
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 14:21:10 Error: [MissingActionException] Action ProjectsController::1() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '1',
+)
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 14:21:18 Error: [MissingActionException] Action ProjectsController::1() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '1',
+)
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 14:22:03 Error: [MissingActionException] Action ProjectsController::1() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '1',
+)
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 14:22:03 Error: [MissingActionException] Action ProjectsController::1() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '1',
+)
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 14:22:13 Error: [MissingActionException] Action ProjectsController::1() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '1',
+)
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 14:22:17 Error: [MissingControllerException] Controller class ProjectController could not be found.
+Exception Attributes: array (
+  'class' => 'ProjectController',
+  'plugin' => NULL,
+)
+Request URL: /cake_dev/web-bootcamp/project
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-30 14:22:26 Error: [MissingActionException] Action ProjectsController::1() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '1',
+)
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 14:22:31 Error: [MissingActionException] Action ProjectsController::1() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '1',
+)
+Request URL: /cake_dev/web-bootcamp/projects/1/
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 14:22:36 Error: [MissingActionException] Action ProjectsController::1() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '1',
+)
+Request URL: /cake_dev/web-bootcamp/projects/1/
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 14:23:20 Error: [MissingActionException] Action ProjectsController::1() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '1',
+)
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 14:23:21 Error: [MissingActionException] Action ProjectsController::1() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '1',
+)
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 14:23:21 Error: [MissingActionException] Action ProjectsController::1() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '1',
+)
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 14:23:22 Error: [MissingActionException] Action ProjectsController::1() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProjectsController',
+  'action' => '1',
+)
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-30 14:23:50 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-30 14:24:06 Error: [NotFoundException] Invalid project
+Request URL: /cake_dev/web-bootcamp/projects/1
+Stack Trace:
+#0 [internal function]: ProjectsController->view()
+#1 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#2 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/cake_dev/web-bootcamp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cake_dev/web-bootcamp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
