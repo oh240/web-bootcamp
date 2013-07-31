@@ -34,15 +34,19 @@ class TodosController extends AppController {
  * @param string $id
  * @return void
  */
-	public function view($id) {
+	public function view($project_id,$id) {
 		if (!$this->Todo->exists($id)) {
 			throw new NotFoundException(__('Invalid todo'));
 		}
-		$options = array('conditions' => array('Todo.' . $this->Todo->primaryKey => $id));
-		$this->set('todo', $this->Todo->find('first', $options));
-		
 		$options = array(
-				'conditions' => array('Task.todo_id'),
+			'conditions' => array(
+				'Todo.id' => $id,
+				'Todo.Project_id' =>$project_id,
+			)
+		);
+		$this->set('todo', $this->Todo->find('first', $options));
+		$options = array(
+				'conditions' => array('Task.todo_id' => $id),
 		);
 		$this->Task->recursive = 2;
 		$this->set('tasks',$this->Task->find('all', $options));

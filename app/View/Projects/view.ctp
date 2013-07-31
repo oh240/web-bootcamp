@@ -10,8 +10,7 @@
 
 <h4>
 <?php echo $this->Html->link($todo['Todo']['name'],
-		array('controller'=>'todos','action'=>'view',$todo['Todo']['id']));
-
+		array('controller'=>'todos','action'=>'view','project_id'=>$project['Project']['id'],'id'=>$todo['Todo']['id']));
 ?>
 </h4>
 
@@ -19,7 +18,7 @@
 
 <?php foreach ($todo['Task'] as $task) :?>
 <li>
-	<?php echo $task['name'];?>
+<?php echo $task['name'];?>
 </li>
 
 <?php endforeach ;?>
@@ -27,10 +26,11 @@
 <li class="add_subtask">
 
 <p>
-	<strong>
-	<?php echo $this->Html->link('サブタスクの追加',array('controller'=>'tasks','action'=>'add'));
-	?>
-	</strong>
+<strong> 
+<?php echo $this->Html->link('サブタスクの追加',
+		array('controller'=>'tasks','action'=>'add','project_id'=>$project['Project']['id'],'todo_id'=>$todo['Todo']['id']));
+?>
+</strong>
 </p>
 
 

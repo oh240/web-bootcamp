@@ -2,15 +2,18 @@
 
 <div class="well">
 	
-	<?php foreach($projects as $data): ?>
+	<?php foreach($projects as $project): ?>
 		<div class="clearfix">
 			<h4>
-				<?php echo $this->Html->link($data['Project']['name'],
-							array('action'=>'view','id'=>$data['Project']['id']));?>
+
+			<?php echo $this->Html->link($project['Project']['name'],
+      array('controller'=>'projects','action'=>'view','id'=>$project['Project']['id']));
+  ?>			
+
 			</h4>
 			<div class="pull-right">
 						登録者:
-						<?php echo $this->Html->link($data['User']['nickname'],array('controller'=>'users','action'=>'view',$data['User']['id']));?>
+						<?php echo $this->Html->link($project['User']['nickname'],array('controller'=>'users','action'=>'view',$project['User']['id']));?>
 			</div>
 		</div>
 		<hr>
