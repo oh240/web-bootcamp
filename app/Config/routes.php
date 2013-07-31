@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Routes configuration
  *
@@ -26,62 +27,52 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
-	Router::connectNamed(true);
+Router::connectNamed(true);
 
-	Router::connect('/', array('controller' => 'projects', 'action' => 'index', 'home'));
+Router::connect('/', array('controller' => 'projects', 'action' => 'index', 'home'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
-	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
-	Router::connect('/projects/:id', 
-			array('controller' =>'projects','action'=>'view'),
-			array('pass'=> array('id'),'id'=>'[0-9]+')
-	);
+Router::connect('/projects/:id', array('controller' => 'projects', 'action' => 'view'), array('pass' => array('id'), 'id' => '[0-9]+')
+);
 
-	Router::connect('/projects/:id/edit', 
-			array('controller' =>'projects','action'=>'edit'),
-			array('pass'=> array('id'),'id'=>'[0-9]+')
-	);
+Router::connect('/projects/:id/edit', array('controller' => 'projects', 'action' => 'edit'), array('pass' => array('id'), 'id' => '[0-9]+')
+);
 
-	Router::connect('/projects/:id/delete', 
-			array('controller' =>'projects','action'=>'delete'),
-			array('pass'=> array('id'),'id'=>'[0-9]+')
-	);
+Router::connect('/projects/:id/delete', array('controller' => 'projects', 'action' => 'delete'), array('pass' => array('id'), 'id' => '[0-9]+')
+);
 
-	Router::connect('/projects/', 
-			array('controller' =>'projects','action'=>'index'),
-			array('pass'=> array('id'),'id'=>'[0-9]+')
-	);
+Router::connect('/projects/', array('controller' => 'projects', 'action' => 'index')
+);
 
-	Router::connect('/projects/index/', 
-			array('controller' =>'projects','action'=>'index'),
-			array('pass'=> array('id'),'id'=>'[0-9]+')
-	);
+Router::connect('/projects/index/', array('controller' => 'projects', 'action' => 'index')
+);
 
-	Router::connect('/projects/:project_id/todos/:id', 
-			array('controller' =>'todos','action'=>'view'),
-			array('pass'=> array('project_id','id'),
-						'project_id'=>'[0-9]+','id'=>'[0-9]+'
-			)
-	);
+Router::connect('/projects/:project_id/todos/:id', array('controller' => 'todos', 'action' => 'view'), array('pass' => array('project_id', 'id'),
+    'project_id' => '[0-9]+', 'id' => '[0-9]+'
+        )
+);
 
-	Router::connect('/projects/:project_id/todos/:todo_id/tasks/:action', 
-			array('controller' =>'tasks'),
-			array('pass'=> array('project_id','todo_id'),
-						'project_id'=>'[0-9]+','todo_id'=>'[0-9]+'
-		  )
-	);
+Router::connect('/projects/:project_id/todos/:todo_id/tasks/:action', 
+array('controller' => 'tasks'), array('pass' => array('project_id', 'todo_id'),'project_id' => '[0-9]+', 'todo_id' => '[0-9]+'));
+
+/*
+Router::connect('/tasks/chk/:id', 
+array('controller' => 'tasks', 'action' => 'chk'), array('pass' => array('id'),'id' => '[0-9]+'));
+*/
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.
  */
-	CakePlugin::routes();
+CakePlugin::routes();
 
 /**
  * Load the CakePHP default routes. Only remove this if you do not want to use
  * the built-in default routes.
  */
 require CAKE . 'Config' . DS . 'routes.php';
-	
+
+
