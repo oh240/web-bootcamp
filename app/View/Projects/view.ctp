@@ -17,21 +17,23 @@
         <ul class="subtasks">
 
             <?php foreach ($todo['Task'] as $task) : ?>
-            
-             <?php if($task['status'] == 0) :?>
-            
-                <li id="task_<?php echo $task['id']; ?>">
-                    <label class="checkbox">
-                        <?php
-                        echo $this->Form->checkbox($task['id'], array('value' => $task['status'],'class' => 'closed','data-task-id' => $task['id']));
-                        ?>
-                        <?php echo $task['name']; ?>
-                    </label>
-                </li>
-                
-             <?php else :?>
-                
-             <?php endif;?>
+
+                <?php //echo ROOT; ?>
+
+                <?php if ($task['status'] == 0) : ?>
+
+                    <li id="task_<?php echo $task['id']; ?>">
+                        <label class="checkbox">
+                            <?php
+                            echo $this->Form->checkbox($task['id'], array('value' => $task['status'], 'class' => 'closed', 'data-task-id' => $task['id']));
+                            ?>
+                            <?php echo $task['name']; ?>
+                        </label>
+                    </li>
+
+                <?php else : ?>
+
+                <?php endif; ?>
 
             <?php endforeach; ?>
 
@@ -79,7 +81,7 @@
 
     $(function() {
         $('.closed').click(function(e) {
-            $.post('/cake_dev/web-bootcamp/tasks/chk/' + $(this).data('task-id'), {}, function(res) {
+            $.post('<?php echo $this->webroot; ?>tasks/chk/' + $(this).data('task-id'), {}, function(res) {
                 $('#task_' + res.id).fadeOut();
             }, "json");
         });
