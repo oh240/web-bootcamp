@@ -5,6 +5,8 @@ app/tmp/*
 app/[Cc]onfig/core.php
 app/[Cc]onfig/database.php
 !empty
+*.swp    #.swpで終わるファイル(vimの一時ファイル？)
+*~       #~で終わるファイル
 ######################
 # OS generated files #
 ######################
