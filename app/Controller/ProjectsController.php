@@ -65,6 +65,10 @@ class ProjectsController extends AppController {
 
         $this->set('todos', $this->Todo->find('all', $options));
     }
+    
+    public function tasklist($id = null) {
+        $this->view($id);
+    }
 
     /**
      * edit method

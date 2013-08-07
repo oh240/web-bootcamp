@@ -37,7 +37,7 @@ class TasksController extends AppController {
      */
     public function view($id = null) {
         if (!$this->Task->exists($id)) {
-            throw new NotFoundException(__('Invalid task'));
+            throw new NotFoundException(__('このタスクは存在しません'));
         }
         $options = array('conditions' => array('Task.' . $this->Task->primaryKey => $id));
         $this->set('task', $this->Task->find('first', $options));
@@ -98,11 +98,11 @@ class TasksController extends AppController {
         }
         $this->request->onlyAllow('post', 'delete');
         if ($this->Task->delete()) {
-            $this->Session->setFlash(__('Task deleted'));
-            $this->redirect(array('action' => 'index'));
+            $this->Session->setFlash('タスクを削除しました');
+            $this->redirect($this->referer());
         }
-        $this->Session->setFlash(__('Task was not deleted'));
-        $this->redirect(array('action' => 'index'));
+        $this->Session->setFlash('タスクを削除できませんでした');
+        $this->redirect($this->referer());
     }
 
     public function chk($id) {
@@ -125,8 +125,6 @@ class TasksController extends AppController {
                 exit();
             }
         }
-
-        //$this->redirect(array('controller' => 'projects', 'action' => 'view', 'project_id' => $project_id));
     }
 
 }

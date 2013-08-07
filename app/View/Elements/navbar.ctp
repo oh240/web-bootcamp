@@ -4,7 +4,8 @@
 		<?php echo $this->Html->link('プロジェクト一覧',array('controller'=>'projects','action'=>'index')); ?>
 	</li>
 	<li>
-		<?php echo $this->Html->link('タスク一覧',array('controller'=>'tasks','action'=>'index')); ?>
+		<?php echo $this->Html->link('タスクリスト',
+            array('controller'=>'projects','action'=>'tasklist')); ?>
 	</li>
 	<li>
 		<?php echo $this->Html->link('掲示板',array('controller'=>'comments','action'=>'index')); ?>
