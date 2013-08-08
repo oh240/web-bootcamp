@@ -5,9 +5,7 @@
 		</div>
 		
 		<?php if($this->Session->check('Login.Id')):?>
-			<header>
-				<?php echo $this->element('navbar') ;?>
-			</header>
+
 		<?php endif;?>
 		
 		<div id="main">

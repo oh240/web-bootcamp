@@ -66,7 +66,7 @@ textarea {
 }
 
 .add_subtask input[type="text"]{
-	width: 90%;
+	width: 85%;
 }
 
 .subtasks  {
@@ -74,7 +74,7 @@ textarea {
 }
 
 .subtasks li{
-	width: 80%;
+	width: 60%;
 	margin: 10px 0;
 }
 

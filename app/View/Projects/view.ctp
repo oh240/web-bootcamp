@@ -1,16 +1,16 @@
 <br />
 <h2><?php echo $project['Project']['name']; ?></h2>
 <hr />
+
+<?php echo $this->element('navbar'); ?>
+
 <h3>タスクリスト</h3>
 <div class="well">
 
     <?php foreach ($todos as $todo) : ?>
 
         <h4>
-            <?php
-            echo $this->Html->link($todo['Todo']['name'], array('controller' => 'todos', 'action' => 'view',
-                'project_id' => $project['Project']['id'], 'id' => $todo['Todo']['id']));
-            ?>
+               <?php echo $todo['Todo']['name']; ?>
         </h4>
 
         <ul class="subtasks">
@@ -20,12 +20,10 @@
                     <?php if ( $task['status'] == "0" ) : ?>
             
                         <li id="task_<?php echo $task['id']; ?>">
-                            <label class="checkbox">
-                                <?php echo $this->Form->checkbox($task['id'], array('value' => $task['status'], 'class' => 'closed', 'data-task-id' => $task['id'])); ?>
+                               <?php echo $this->Form->postLink('<i class="icon-edit"></i>', array('controller'=>'tasks','action'=>'chk',$task['id']),array('escape'=>false),'タスクを完了しますがよろしいですか？',$task['id']);?>
                                 <?php echo $this->Html->link($task['name'], array('controller' => 'tasks', 'action' => 'view', $task['id']));
                                 ?>
                                <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller'=>'tasks','action'=>'delete',$task['id']),array('escape'=>false),'タスクを削除しますがよろしいですか？',$task['id']);?>
-                            </label>
                         </li>
                     
                     <?php endif ;?>
@@ -37,9 +35,9 @@
      <hr />
 
     <?php endforeach; ?>
-     <h5 class="text-right">
-     <?php echo $this->Html->link('タスクリストへ移動する',array('controller' => 'projects', 'action' => 'tasklist', $project['Project']['id'])); ?>
-     </h5>
+     <div class="text-right">
+     <?php echo $this->Html->link('タスクリストへ移動する',array('controller' => 'projects', 'action' => 'tasklist', $project['Project']['id']),array('class'=>'btn btn-success')); ?>
+     </div>
 
 </div>
 
