@@ -48,10 +48,13 @@ Router::connect('/projects/index/', array('controller' => 'projects', 'action' =
 Router::connect('/projects/tasklist/:id', array('controller' => 'projects', 'action' => 'tasklist'),array('pass'=>array('id'),'id'=>'[0-9]+'));
 
 Router::connect('/projects/:project_id/todos/:id', array('controller' => 'todos', 'action' => 'view'), array('pass' => array('project_id', 'id'),
-    'project_id' => '[0-9]+', 'id' => '[0-9]+' ));
+    'project_id' => '[0-9]+', 'id' => '[0-9]+'));
 
 Router::connect('/projects/:project_id/todos/:todo_id/tasks/add', 
 array('controller' => 'tasks','action'=>'add'), array('pass' => array('project_id','todo_id','id'),'project_id' => '[0-9]+','todo_id' => '[0-9]+','id' => '[0-9]+'));
+
+Router::connect('/tasks/unchk/:id', 
+array('controller' => 'tasks','action'=>'unchk'), array('pass' => array('id'),'id' => '[0-9]+'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

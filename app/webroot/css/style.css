@@ -78,7 +78,7 @@ textarea {
 	margin: 10px 0;
 }
 
-.subtasks li.end {
+.end {
 	color:#888;
 	text-decoration: line-through;
 }

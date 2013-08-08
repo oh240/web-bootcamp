@@ -53,7 +53,7 @@ class TasksController extends AppController {
             $this->Task->create();
             if ($this->Task->save($this->request->data)) {
                 $this->Session->setFlash(__('The task has been saved'));
-                $this->redirect(array('action' => 'index'));
+                $this->redirect($this->referer());
             } else {
                 $this->Session->setFlash(__('The task could not be saved. Please, try again.'));
             }
@@ -105,6 +105,7 @@ class TasksController extends AppController {
         $this->redirect($this->referer());
     }
 
+    /*
     public function chk($id) {
 
         $this->Task->id = $id;
@@ -125,6 +126,39 @@ class TasksController extends AppController {
                 exit();
             }
         }
+    }
+     
+    */
+
+    public function unchk($id = null) {
+        $this->Task->id = $id;
+        if (!$this->Task->exists()) {
+            throw new NotFoundException(__('Invalid task'));
+        }
+        $this->request->onlyAllow('post', 'save');
+        if ($this->Task->saveField('status',0)) {
+            $this->Session->setFlash('タスクを未完了状態に変更しました');
+            $this->redirect($this->referer());
+        }
+        $this->Session->setFlash('タスクの状態を変更できませんでした');
+        $this->redirect($this->referer());
+    }
+    
+    
+    public function chk($id = null) {
+        $this->Task->id = $id;
+        if (!$this->Task->exists()) {
+            throw new NotFoundException(__('Invalid task'));
+        }
+        
+        $this->request->onlyAllow('post', 'save');
+        if ($this->Task->saveField('status',1)) {
+            $this->Session->setFlash('タスクを完了状態に変更しました');
+            $this->redirect($this->referer());
+        }
+        
+        $this->Session->setFlash('タスクの状態を変更できませんでした');
+        $this->redirect($this->referer());
     }
 
 }
