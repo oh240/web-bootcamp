@@ -1,4 +1,4 @@
-<h3>あなたの管理するプロジェクト一覧</h3>
+<h3>プロジェクト一覧</h3>
 
 <div class="well">
 	
@@ -7,8 +7,7 @@
 			<h4>
 
 			<?php echo $this->Html->link($project['Project']['name'],
-      array('controller'=>'projects','action'=>'view','id'=>$project['Project']['id']));
-  ?>			
+      array('controller'=>'projects','action'=>'view','id'=>$project['Project']['id']));?>			
 
 			</h4>
 			<div class="pull-right">

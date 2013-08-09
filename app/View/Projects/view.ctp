@@ -40,23 +40,3 @@
      </div>
 
 </div>
-
-<h3>掲示板</h3>
-<div class="well">
-    <h3 class="text-center">新しい投稿はありません</h3>
-</div>
-
-<h3>Wikiページ</h3>
-<div class="well">
-    <h3 class="text-center">ユーザー西尾拓也によって更新されています。</h3>
-</div>
-
-<script>
-    $(function() {
-        $('.closed').click(function(e) {
-            $.post('<?php echo $this->webroot; ?>tasks/chk/' + $(this).data('task-id'), {}, function(res) {
-                $('#task_' + res.id).fadeOut();
-            }, "json");
-        });
-    });
-</script>

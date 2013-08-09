@@ -26,16 +26,15 @@ class ProjectsController extends AppController {
      */
     public function index() {
 
-        $this->set('title_for_layout', '管理しているプロジェクト一覧');
+        $this->set('title_for_layout', 'プロジェクト一覧');
         $this->Project->recursive = 0;
-        $options = $this->Project->serchProjects($this->Session->read('Login.Id'));
-        $this->set('projects', $this->Project->find('all', $options));
+        $this->set('projects', $this->Project->find('all'));
 
         if ($this->request->is('post')) {
             $this->Project->create();
             if ($this->Project->save($this->request->data)) {
-                $this->Session->setFlash(__('The project has been saved'));
-                $this->redirect(array('action' => 'index'));
+                $this->Session->setFlash(__('新規にプロジェクトを追加しました'));
+                $this->redirect($this->referer());
             } else {
                 $this->Session->setFlash(__('The project could not be saved. Please, try again.'));
             }
@@ -65,7 +64,7 @@ class ProjectsController extends AppController {
 
         $this->set('todos', $this->Todo->find('all', $options));
     }
-    
+
     public function tasklist($id = null) {
         $this->view($id);
     }

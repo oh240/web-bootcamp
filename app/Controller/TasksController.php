@@ -41,6 +41,8 @@ class TasksController extends AppController {
         }
         $options = array('conditions' => array('Task.' . $this->Task->primaryKey => $id));
         $this->set('task', $this->Task->find('first', $options));
+        
+        
     }
 
     /**
