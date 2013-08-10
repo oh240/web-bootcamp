@@ -1,21 +1,26 @@
 <div class="users form">
-<?php echo $this->Form->create('User'); ?>
-	<fieldset>
-		<legend><?php echo __('Edit User'); ?></legend>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('username');
-		echo $this->Form->input('password');
-		echo $this->Form->input('nickname');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
+    <?php echo $this->Form->create('User', array('inputDefaults' => array('label' => false))); ?>
+    <?php echo $this->Form->hidden('User.id',array('value'=>$this->request->data['User']['id'])); ?>
+    <?php echo $this->Form->hidden('User.username',array('value'=>$this->request->data['User']['username'])); ?>
+    <p>
+        ニックネーム
+        <?php echo $this->Form->input('User.nickname'); ?>
+    </p>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('User.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('User.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
-	</ul>
+    <p>
+        新しいパスワード
+        <?php echo $this->Form->input('new_password1', array('type' => 'password')); ?>
+    </p>
+
+    <p>
+        新しいパスワード（確認用）
+        <?php echo $this->Form->input('new_password2', array('type' => 'password')); ?>
+    </p>
+
+    <p>
+        <?php echo $this->Form->submit('変更を保存する', array('class' => 'btn btn-success btn-small')); ?>
+    </p>
+
+
+    <?php echo $this->Form->end(); ?>
 </div>

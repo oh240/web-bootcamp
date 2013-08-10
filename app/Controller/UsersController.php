@@ -23,6 +23,7 @@ class UsersController extends AppController {
 	}
 	
 	public function login() {
+      
 		if ($this->request->is('Post')) {
 			
 			if ($this->Auth->login()) {
@@ -66,8 +67,9 @@ class UsersController extends AppController {
  * @throws NotFoundException
  * @param string $id
  * @return void
- */
-	public function view($id = null) {
+ */	
+public function view($id = null) {
+    $this->set('title_for_layout', 'ユーザーの設定変更');
 		if (!$this->User->exists($id)) {
 			throw new NotFoundException(__('Invalid user'));
 		}
@@ -104,11 +106,20 @@ class UsersController extends AppController {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
+        if ($this->request->data['User']['new_password1'] === $this->request->data['User']['new_password2']) {
+            $this->request->data['User']['password'] = $this->request->data['User']['new_password1'];
+            unset($this->request->data['User']['new_password1'],$this->request->data['User']['new_password2']);
+        } else {
+            $this->Session->setFlash(__('確認のパスワードが間違えています'));
+            $this->redirect($this->referer());
+            exit();
+        }
+        
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('ユーザーの設定変更を保存しました'));
+				$this->redirect($this->referer());
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('ユーザーの設定変更が保存出来ませんでした'));
 			}
 		} else {
 			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
