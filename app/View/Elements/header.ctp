@@ -45,6 +45,7 @@
                                     <?php echo $this->Session->read('Login.Nickname'); ?>
                                     さん
                                 </div>
+                            
 
                                 <?php
                                 echo $this->Html->link
