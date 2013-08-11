@@ -39,7 +39,7 @@ class TasksController extends AppController {
         if (!$this->Task->exists($id)) {
             throw new NotFoundException(__('このタスクは存在しません'));
         }
-        $options = array('conditions' => array('Task.' .$this->Task->primaryKey => $id));
+        $options = array('conditions' => array('Task.' . $this->Task->primaryKey => $id));
         $this->set('task', $this->Task->find('first', $options));
     }
 
