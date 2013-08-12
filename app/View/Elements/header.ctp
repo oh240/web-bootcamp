@@ -28,13 +28,9 @@
 
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
+                        <?php echo $this->Html->link('WebBootCamp', array('controller' => 'projects', 'action' => 'index'), array('class' => 'brand'));?>
                 <div class="container">
-                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="brand" href="#">Web BootCamp</a>
+
                     <div class="nav-collapse collapse clearfix">
                         <div class="pull-right">
 
@@ -45,12 +41,9 @@
                                     <?php echo $this->Session->read('Login.Nickname'); ?>
                                     さん
                                 </div>
-                            
 
-                                <?php
-                                echo $this->Html->link
-                                        ('ログアウト', array('controller' => 'users', 'action' => 'logout'), array('class' => 'btn btn-info btn-mini'));
-                                ?>
+
+                                <?php echo $this->Html->link('ログアウト', array('controller' => 'users', 'action' => 'logout'), array('class' => 'btn btn-info btn-mini'));?>
 
                             <?php else : ?>
 

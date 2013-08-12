@@ -18,7 +18,7 @@
 	<?php endforeach ;?>
 	
 	<?php echo $this->Form->create('Project');?>
-		<legend><strong>新規プロジェクトの追加</strong></legend>
+		<h3></h3>
 		<?php echo $this->Form->input('name',array('label'=>false));?>
 		<?php echo $this->Form->input('user_id',array('type'=>'hidden','value'=>$this->Session->read('Login.Id')));?>
 		<?php echo $this->Form->submit('追加する',array('class'=>'btn btn-success'));?>
