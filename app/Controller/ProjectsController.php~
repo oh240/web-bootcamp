@@ -25,9 +25,16 @@ class ProjectsController extends AppController {
      * @return void
      */
     public function index() {
-        $this->set('title_for_layout', 'プロジェクト一覧');
         $this->Project->recursive = 0;
+        $this->set('title_for_layout', 'プロジェクト一覧');
+        
+        $options = array(
+            //'conditions' => array('Project.project_id' => $id),
+        );
+        
+        //$this->set('projects', $this->Project->find('all',$options));
         $this->set('projects', $this->Project->find('all'));
+        
         if ($this->request->is('post')) {
             $this->Project->create();
             if ($this->Project->save($this->request->data)) {
@@ -54,7 +61,6 @@ class ProjectsController extends AppController {
         $options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
         $this->set('project', $this->Project->find('first', $options));
         $this->Todo->recursive = 2;
-
         $options = array(
             'conditions' => array('Todo.project_id' => $id),
         );

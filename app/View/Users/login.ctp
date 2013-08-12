@@ -1,4 +1,4 @@
-			<h1 class="text-center">Web BootCamps</h1>
+			<h1 class="text-center">Web BootCamp</h1>
 			<br>
 			<br>
 			<?php	
@@ -12,9 +12,6 @@
 				echo $this->Form->input('password',array('class'=>'input-block-level','label'=>'パスワード'));
 			?>
 			
-      <label class="checkbox">
-        <input type="checkbox" value="remember-me">パスワードを記憶させる
-      </label>
 			<br>
 			<?php 
 				echo $this->Html->link('新規登録',array('action'=>'add'),

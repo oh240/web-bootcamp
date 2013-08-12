@@ -27,7 +27,6 @@ class UsersController extends AppController {
 		if ($this->request->is('Post')) {
 			
 			if ($this->Auth->login()) {
-				
 				$sessionKey = $this->User->LoginUser($this->request->data['User']['username']);
 				$this->Session->write('Login.Id',$sessionKey['User']['id']);
 				$this->Session->write('Login.Nickname',$sessionKey['User']['nickname']);

@@ -70,13 +70,25 @@ public function view($id = null) {
  */
 	public function add() {
 		if ($this->request->is('post')) {
-			$this->User->create();
-			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('新規ユーザーの登録完了'));
-				$this->redirect(array('controller'=>'projects','action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('新規ユーザーの追加に失敗しました。'));
-			}
+		   
+		   if ($this->request->data['User']['password1'] === $this->request->data['User']['password2']) {
+            $this->request->data['User']['password'] = $this->request->data['User']['password1'];
+            unset($this->request->data['User']['password1'],$this->request->data['User']['password2']);
+            		      
+						$this->User->create();
+						if ($this->User->save($this->request->data)) {
+							$this->Session->setFlash(__('新規ユーザーの登録完了'));
+							$this->redirect(array('controller'=>'projects','action' => 'index'));
+						} else {
+							$this->Session->setFlash(__('新規ユーザーの追加に失敗しました。'));
+							$this->redirect($this->referer());
+						}
+						
+        } else {
+            $this->Session->setFlash(__('確認のパスワードが間違えています'));
+            $this->redirect($this->referer());
+            exit();
+      }
 		}
 	}
 

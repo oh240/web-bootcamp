@@ -42,7 +42,7 @@ class TasksController extends AppController {
         $options = array('conditions' => array('Task.' .$this->Task->primaryKey => $id));
         $this->set('task', $this->Task->find('first', $options));
     }
-
+    
     /**
      * add method
      *
@@ -131,15 +131,20 @@ class TasksController extends AppController {
     */
 
     public function unchk($id = null) {
+        
         $this->Task->id = $id;
+        
         if (!$this->Task->exists()) {
             throw new NotFoundException(__('Invalid task'));
         }
+        
         $this->request->onlyAllow('post', 'save');
+        
         if ($this->Task->saveField('status',0)) {
             $this->Session->setFlash('タスクを未完了状態に変更しました');
             $this->redirect($this->referer());
         }
+        
         $this->Session->setFlash('タスクの状態を変更できませんでした');
         $this->redirect($this->referer());
     }
