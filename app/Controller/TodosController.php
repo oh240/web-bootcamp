@@ -73,6 +73,7 @@ class TodosController extends AppController {
         }
         $this->request->onlyAllow('post', 'delete');
         if ($this->Todo->delete()) {
+        		$this->Task->chkDel($id);
             $this->Session->setFlash(__('メインタスクを削除しました。'));
             $this->redirect($this->referer());
         }

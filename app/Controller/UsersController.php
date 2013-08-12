@@ -27,12 +27,9 @@ class UsersController extends AppController {
 		if ($this->request->is('Post')) {
 			
 			if ($this->Auth->login()) {
-				
 				$sessionKey = $this->User->LoginUser($this->request->data['User']['username']);
-				
 				$this->Session->write('Login.Id',$sessionKey['User']['id']);
 				$this->Session->write('Login.Nickname',$sessionKey['User']['nickname']);
-				
 				return $this->redirect(array('controller'=>'projects','action'=>'index'));
 			}
 			else {
@@ -48,17 +45,6 @@ class UsersController extends AppController {
 		$this->Session->setFlash('ログアウト完了');
 		$this->Session->destroy();
 		return $this->redirect(array('action'=>'login'));
-	}
-
-/**
- * index method
- *
- * @return void
- */
-	public function index() {
-		$this->set('title_for_layout', 'ユーザー一覧');
-		$this->User->recursive = 0;
-		$this->set('users', $this->Paginator->paginate());
 	}
 
 /**

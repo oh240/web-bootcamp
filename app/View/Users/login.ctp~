@@ -9,6 +9,8 @@
 			
 			<?php
 				echo $this->Form->input('username',array('class'=>'input-block-level','label'=>'ユーザーID')); 
+			?>
+			<?php
 				echo $this->Form->input('password',array('class'=>'input-block-level','label'=>'パスワード'));
 			?>
 			
