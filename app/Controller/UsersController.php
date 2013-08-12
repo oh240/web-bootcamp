@@ -42,9 +42,9 @@ class UsersController extends AppController {
 	
 	public function logout() {
 		$this->Auth->logout();
-		$this->Session->setFlash('ログアウト完了');
 		$this->Session->destroy();
 		return $this->redirect(array('action'=>'login'));
+    $this->Session->setFlash('ログアウト完了');
 	}
 
 /**
@@ -70,7 +70,6 @@ public function view($id = null) {
  */
 	public function add() {
 		if ($this->request->is('post')) {
-		   
 		   if ($this->request->data['User']['password1'] === $this->request->data['User']['password2']) {
             $this->request->data['User']['password'] = $this->request->data['User']['password1'];
             unset($this->request->data['User']['password1'],$this->request->data['User']['password2']);
