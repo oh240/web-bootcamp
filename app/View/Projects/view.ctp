@@ -20,6 +20,9 @@
                     <?php if ( $task['status'] == "0" ) : ?>
             
                         <li id="task_<?php echo $task['id']; ?>">
+                            
+                                <span class="badge"><?php echo $task['id']; ?></span>
+                            
                                <?php echo $this->Form->postLink('<i class="icon-edit"></i>', array('controller'=>'tasks','action'=>'chk',$task['id']),array('escape'=>false),'タスクを完了しますがよろしいですか？',$task['id']);?>
                                <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller'=>'tasks','action'=>'delete',$task['id']),array('escape'=>false),'タスクを削除しますがよろしいですか？',$task['id']);?>
                                <?php echo $task['name']; ?>

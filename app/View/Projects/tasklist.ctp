@@ -27,12 +27,13 @@
 
                     <li id="task_<?php echo $task['id']; ?>">
                         
-                        <?php echo $this->Form->postLink('<i class="icon-edit"></i>', array('controller' => 'tasks', 'action' => 'chk', $task['id']), array('escape' => false), 'タスクを完了しますがよろしいですか？', $task['id']); ?>
-                        <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller' => 'tasks', 'action' => 'delete', $task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>
-                        
                         <span class="badge"><?php echo $task['id']; ?></span>
                         
-                        <?php echo $task['name']; ?>
+                        <?php echo $this->Form->postLink('<i class="icon-edit"></i>', array('controller' => 'tasks', 'action' => 'chk', $task['id']), array('escape' => false), 'タスクを完了しますがよろしいですか？', $task['id']); ?>
+                        <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller' => 'tasks', 'action' => 'delete', $task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>                        
+                        
+                       <?php echo $task['name']; ?>
+                        
                     </li>
 
                 <?php else : ?>
@@ -70,9 +71,10 @@
 
                         <li id="task_<?php echo $task['id']; ?>" class="end">
                             
+                            <?php echo $task['id']; ?>
+                            
                             <?php echo $this->Form->postLink('<i class="icon-check"></i>', array('controller' => 'tasks', 'action' => 'unchk', $task['id']), array('escape' => false), 'タスクを未完了状態にしますがよろしいですか？', $task['id']); ?>
                            <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller' => 'tasks', 'action' => 'delete', $task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>                
-                            <?php echo $task['id']; ?>
                             <?php echo $task['name']; ?>
                          
                         </li>
