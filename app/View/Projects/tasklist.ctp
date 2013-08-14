@@ -27,11 +27,11 @@
 
                     <li id="task_<?php echo $task['id']; ?>">
                         
-                        <?php if ($task['priority'] == 1) :?>
+                        <?php if ($task['rank'] == 1) :?>
                             <span class="badge badge-success">
-                        <?php elseif ($task['priority'] == 2) :?>
+                        <?php elseif ($task['rank'] == 2) :?>
                             <span class="badge badge-warning"> 
-                        <?php elseif ($task['priority'] == 3) :?>
+                        <?php elseif ($task['rank'] == 3) :?>
                             <span class="badge badge-important">        
                         <?php else:?>
                             <span class="badge">
@@ -63,7 +63,7 @@
                <?php echo $this->Form->create('Task',array('controller' => 'tasks', 'action' => 'add'));?>
                 
                 <?php echo $this->Form->input('Task.name',array('label'=>false));?>
-                <?php echo $this->Form->input('Task.priority',
+                <?php echo $this->Form->input('Task.rank',
                         array('type'=>'select','label'=>'優先度の設定','options'=>array('指定なし','低','中','高')));?>     
                 <?php echo $this->Form->hidden('Task.todo_id',array('value'=>$todo['Todo']['id']));?>
                 
