@@ -27,7 +27,17 @@
 
                     <li id="task_<?php echo $task['id']; ?>">
                         
-                        <span class="badge"><?php echo $task['id']; ?></span>
+                        <?php if ($task['priority'] == 1) :?>
+                            <span class="badge badge-success">
+                        <?php elseif ($task['priority'] == 2) :?>
+                            <span class="badge badge-warning"> 
+                        <?php elseif ($task['priority'] == 3) :?>
+                            <span class="badge badge-important">        
+                        <?php else:?>
+                            <span class="badge">
+                         <?php endif;?>
+                                <?php echo $task['id']?>
+                            </span>
                         
                         <?php echo $this->Form->postLink('<i class="icon-edit"></i>', array('controller' => 'tasks', 'action' => 'chk', $task['id']), array('escape' => false), 'タスクを完了しますがよろしいですか？', $task['id']); ?>
                         <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller' => 'tasks', 'action' => 'delete', $task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>                        
@@ -52,10 +62,9 @@
                 
                <?php echo $this->Form->create('Task',array('controller' => 'tasks', 'action' => 'add'));?>
                 
-                <?php echo 
-                        $this->Form->input('Task.name',
-                        array('label'=>false));?>
-                
+                <?php echo $this->Form->input('Task.name',array('label'=>false));?>
+                <?php echo $this->Form->input('Task.priority',
+                        array('type'=>'select','label'=>'優先度の設定','options'=>array('指定なし','低','中','高')));?>     
                 <?php echo $this->Form->hidden('Task.todo_id',array('value'=>$todo['Todo']['id']));?>
                 
                 <?php echo $this->Form->hidden('Task.user_id', array('value' => $this->Session->read('Login.Id')));?>			

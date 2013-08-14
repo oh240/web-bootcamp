@@ -54,19 +54,13 @@ class ProjectsController extends AppController {
 
         $options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
         $this->set('project', $this->Project->find('first', $options));
-        
-        $options = array(
-            //'conditions' => array('Project.project_id' => $id),
-        );
-        
-        //$this->set('projects', $this->Project->find('all',$options));
-        
+              
         $this->Todo->recursive = 2;
         $options = array(
             'conditions' => array('Todo.project_id' => $id),
         );
-
         $this->set('todos', $this->Todo->find('all', $options));
+        
     }
 
     public function tasklist($id = null) {
