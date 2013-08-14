@@ -20,10 +20,12 @@
                     <?php if ( $task['status'] == "0" ) : ?>
             
                         <li id="task_<?php echo $task['id']; ?>">
+                            
+                                <span class="badge"><?php echo $task['id']; ?></span>
+                            
                                <?php echo $this->Form->postLink('<i class="icon-edit"></i>', array('controller'=>'tasks','action'=>'chk',$task['id']),array('escape'=>false),'タスクを完了しますがよろしいですか？',$task['id']);?>
-                                <?php echo $this->Html->link($task['name'], array('controller' => 'tasks', 'action' => 'view', $task['id']));
-                                ?>
                                <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller'=>'tasks','action'=>'delete',$task['id']),array('escape'=>false),'タスクを削除しますがよろしいですか？',$task['id']);?>
+                               <?php echo $task['name']; ?>
                         </li>
                     
                     <?php endif ;?>
@@ -40,23 +42,3 @@
      </div>
 
 </div>
-
-<h3>掲示板</h3>
-<div class="well">
-    <h3 class="text-center">新しい投稿はありません</h3>
-</div>
-
-<h3>Wikiページ</h3>
-<div class="well">
-    <h3 class="text-center">ユーザー西尾拓也によって更新されています。</h3>
-</div>
-
-<script>
-    $(function() {
-        $('.closed').click(function(e) {
-            $.post('<?php echo $this->webroot; ?>tasks/chk/' + $(this).data('task-id'), {}, function(res) {
-                $('#task_' + res.id).fadeOut();
-            }, "json");
-        });
-    });
-</script>

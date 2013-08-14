@@ -100,5 +100,9 @@ class Todo extends AppModel {
 			'counterQuery' => ''
 		)
 	);
+  
+  public function chkDel($project_id) {
+    $this->deleteAll(array('Todo.project_id'=>$project_id_id),true);
+  }
 
 }

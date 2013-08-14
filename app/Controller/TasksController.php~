@@ -139,7 +139,6 @@ class TasksController extends AppController {
         }
         
         $this->request->onlyAllow('post', 'save');
-        
         if ($this->Task->saveField('status',0)) {
             $this->Session->setFlash('タスクを未完了状態に変更しました');
             $this->redirect($this->referer());
