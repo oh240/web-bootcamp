@@ -9,9 +9,7 @@
 <div class="well">
 
     <?php foreach ($todos as $todo) : ?>
-    
         <br />
-
         <h4>
               <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller'=>'todos','action'=>'delete',$todo['Todo']['id']),array('escape'=>false),'メインタスクを削除しますがよろしいですか？（サブタスクも削除されます。）',$todo['Todo']['id']);?>
               <?php echo $todo['Todo']['name'] ;?>
@@ -32,14 +30,14 @@
                         <?php elseif ($task['rank'] == 2) :?>
                             <span class="badge badge-warning"> 
                         <?php elseif ($task['rank'] == 3) :?>
-                            <span class="badge badge-important">        
+                            <span class="badge badge-important">
                         <?php else:?>
                             <span class="badge">
                          <?php endif;?>
-                                <?php echo $task['id']?>
+                            <?php echo $task['id']?>
                             </span>
                         <?php echo $this->Form->postLink('<input type="checkbox">', array('controller' => 'tasks', 'action' => 'chk', $task['id']), array('escape' => false)); ?>
-                        <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller' => 'tasks', 'action' => 'delete', $task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>                        
+                        <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller' => 'tasks', 'action' => 'delete', $task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>
                         <?php echo $task['name']; ?>
                        </label>
                         

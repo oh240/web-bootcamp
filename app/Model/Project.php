@@ -73,8 +73,7 @@ class Project extends AppModel {
 
 	public function serchProjects($id) {
 		$options = array(
-			'conditions' => array ('Project.user_id' => $id)
-		);
+			'conditions' => array ('Project.user_id' => $id));
 		return $options;
 	}
 	
