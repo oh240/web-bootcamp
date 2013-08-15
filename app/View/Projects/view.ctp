@@ -21,7 +21,17 @@
             
                         <li id="task_<?php echo $task['id']; ?>">
                             
-                                <span class="badge"><?php echo $task['id']; ?></span>
+                        <?php if ($task['rank'] == 1) :?>
+                            <span class="badge badge-success">
+                        <?php elseif ($task['rank'] == 2) :?>
+                            <span class="badge badge-warning"> 
+                        <?php elseif ($task['rank'] == 3) :?>
+                            <span class="badge badge-important">        
+                        <?php else:?>
+                            <span class="badge">
+                         <?php endif;?>
+                                <?php echo $task['id']?>
+                            </span>
                             
                                <?php echo $this->Form->postLink('<i class="icon-edit"></i>', array('controller'=>'tasks','action'=>'chk',$task['id']),array('escape'=>false),'タスクを完了しますがよろしいですか？',$task['id']);?>
                                <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller'=>'tasks','action'=>'delete',$task['id']),array('escape'=>false),'タスクを削除しますがよろしいですか？',$task['id']);?>
