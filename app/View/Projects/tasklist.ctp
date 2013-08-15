@@ -12,12 +12,15 @@
         <br />
         <h4>
               <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller'=>'todos','action'=>'delete',$todo['Todo']['id']),array('escape'=>false),'メインタスクを削除しますがよろしいですか？（サブタスクも削除されます。）',$todo['Todo']['id']);?>
+							<i class="icon-chevron-down"></i>
               <?php echo $todo['Todo']['name'] ;?>
         </h4>
     
         <br />
     
-        <ul class="subtasks">
+        <div class="subtasks">
+					
+					<ul id="act_tasks">
 
             <?php foreach ($todo['Task'] as $task) : ?>
 
@@ -48,7 +51,8 @@
                 <?php endif; ?>
 
             <?php endforeach; ?>
-
+					</ul>
+						
             <li class="add_subtask">
 
                 <p>

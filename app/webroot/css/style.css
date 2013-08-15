@@ -90,3 +90,7 @@ textarea {
 .end a {
 	color:#888;
 }
+
+#act_tasks,#end_tasks {
+	list-style: none;
+}

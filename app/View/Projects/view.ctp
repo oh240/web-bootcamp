@@ -19,24 +19,23 @@
             
                     <?php if ( $task['status'] == "0" ) : ?>
             
-                        <li id="task_<?php echo $task['id']; ?>">
-                            
-                        <?php if ($task['rank'] == 1) :?>
-                            <span class="badge badge-success">
-                        <?php elseif ($task['rank'] == 2) :?>
-                            <span class="badge badge-warning"> 
-                        <?php elseif ($task['rank'] == 3) :?>
-                            <span class="badge badge-important">        
-                        <?php else:?>
-                            <span class="badge">
-                         <?php endif;?>
-                                <?php echo $task['id']?>
-                            </span>
-                            
-                               <?php echo $this->Form->postLink('<i class="icon-edit"></i>', array('controller'=>'tasks','action'=>'chk',$task['id']),array('escape'=>false),'タスクを完了しますがよろしいですか？',$task['id']);?>
-                               <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller'=>'tasks','action'=>'delete',$task['id']),array('escape'=>false),'タスクを削除しますがよろしいですか？',$task['id']);?>
-                               <?php echo $task['name']; ?>
-                        </li>
+	                    <li id="task_<?php echo $task['id']; ?>">
+	                     <label class="checkbox">
+	                        <?php if ($task['rank'] == 1) :?>
+	                            <span class="badge badge-success">
+	                        <?php elseif ($task['rank'] == 2) :?>
+	                            <span class="badge badge-warning"> 
+	                        <?php elseif ($task['rank'] == 3) :?>
+	                            <span class="badge badge-important">
+	                        <?php else:?>
+	                            <span class="badge">
+	                         <?php endif;?>
+	                            <?php echo $task['id']?>
+	                            </span>
+	                        <?php echo $this->Form->postLink('<input type="checkbox">', array('controller' => 'tasks', 'action' => 'chk', $task['id']), array('escape' => false)); ?>
+	                        <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller' => 'tasks', 'action' => 'delete', $task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>
+	                        <?php echo $task['name']; ?>
+	                       </label>
                     
                     <?php endif ;?>
 
