@@ -59,6 +59,17 @@ class Project extends AppModel {
 			'order' => ''
 		)
 	);
+  
+  public $hasMany = array(
+		'Todo' => array(
+			'className' => 'Todo',
+			'foreignKey' => 'project_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+      'dependent' => true,  
+		)
+	);
 
 	public function serchProjects($id) {
 		$options = array(

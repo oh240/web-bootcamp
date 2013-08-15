@@ -98,16 +98,4 @@ class Task extends AppModel {
             'order' => ''
         )
     );
-    
-    public function chkDel($todo_id) {
-    	$this->deleteAll(array('Task.todo_id'=>$todo_id),true);
-    }
- /*   
-    public function chkTask($todo_id){
-    	$chk = $this->Find('first',array('Task.todo_id'=>$todo_id));
-    	if ($chk != "") {
-    	
-    	}
-    }
-*/
 }

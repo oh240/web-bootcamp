@@ -75,6 +75,7 @@ class Todo extends AppModel {
 			'className' => 'Project',
 			'foreignKey' => 'project_id',
 			'conditions' => '',
+      'dependent' => true,
 			'fields' => '',
 			'order' => ''
 		)
@@ -89,10 +90,10 @@ class Todo extends AppModel {
 		'Task' => array(
 			'className' => 'Task',
 			'foreignKey' => 'todo_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
-			'order' => '',
+			'order' => 'Task.rank desc',
 			'limit' => '',
 			'offset' => '',
 			'exclusive' => '',
@@ -100,9 +101,5 @@ class Todo extends AppModel {
 			'counterQuery' => ''
 		)
 	);
-  
-  public function chkDel($project_id) {
-    $this->deleteAll(array('Todo.project_id'=>$project_id_id),true);
-  }
 
 }
