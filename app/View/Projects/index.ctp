@@ -10,8 +10,7 @@
       array('controller'=>'projects','action'=>'view','id'=>$project['Project']['id']));?>
 			</h4>
 			<div class="pull-right">
-						登録者:
-						<?php echo $this->Html->link($project['User']['nickname'],array('controller'=>'users','action'=>'view',$project['User']['id']));?>
+						登録者: <?php echo $project['User']['nickname'];?>
 			</div>
 		</div>
 		<hr>

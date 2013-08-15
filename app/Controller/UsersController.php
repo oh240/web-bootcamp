@@ -113,6 +113,8 @@ public function view($id = null) {
         }
         
 			if ($this->User->save($this->request->data)) {
+        $sessionKey = $this->User->LoginUser($this->request->data['User']['username']);
+        $this->Session->write('Login.Nickname',$sessionKey['User']['nickname']);
 				$this->Session->setFlash(__('ユーザーの設定変更を保存しました'));
 				$this->redirect($this->referer());
 			} else {

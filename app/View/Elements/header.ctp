@@ -41,9 +41,11 @@
                                     <?php echo $this->Session->read('Login.Nickname'); ?>
                                     さん
                                 </div>
-
-
-                                <?php echo $this->Html->link('ログアウト', array('controller' => 'users', 'action' => 'logout'), array('class' => 'btn btn-info btn-mini'));?>
+                            
+                             <?php echo $this->Html->link ('ユーザーの設定', array('controller' => 'users', 'action' => 'edit',$this->Session->read('Login.Id')), array('class' => 'btn btn-success btn-mini')); ?>
+                            
+                            
+                             <?php echo $this->Html->link('ログアウト', array('controller' => 'users', 'action' => 'logout'), array('class' => 'btn btn-info btn-mini'));?>
 
                             <?php else : ?>
 
@@ -51,11 +53,6 @@
                                 <?php
                                 echo $this->Html->link
                                         ('ログイン', array('controller' => 'users', 'action' => 'login'), array('class' => 'btn btn-primary btn-mini'));
-                                ?>
-
-                                <?php
-                                echo $this->Html->link
-                                        ('新規登録', array('controller' => 'users', 'action' => 'add'), array('class' => 'btn btn-success btn-mini'));
                                 ?>
 
                             <?php endif; ?>
