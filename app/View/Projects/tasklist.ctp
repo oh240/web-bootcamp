@@ -18,7 +18,7 @@
     
         <div class="subtasks" id="subs<?php echo $todo['Todo']['id']; ?>">
 					
-					<ul id="act_tasks">
+					<ul class="act_tasks">
 
             <?php foreach ($todo['Task'] as $task) : ?>
 
@@ -50,9 +50,11 @@
                 <?php endif; ?>
 
             <?php endforeach; ?>
+						
+					</ul>
 
 						
-            <li class="add_subtask">
+            <div class="add_subtask">
 
                 <p>
                     <strong> 
@@ -68,29 +70,36 @@
                 <?php echo $this->Form->hidden('Task.user_id', array('value' => $this->Session->read('Login.Id')));?>			
                 <?php echo $this->Form->submit('サブタスクを追加する',array('class'=>'btn btn-success btn-mini'));?>
                 <?php echo $this->Form->end();?>
-							</li>
-                
-                
-                <?php foreach ($todo['Task'] as $task) : ?>
+						</div>
+						
+						<a onclick="hideends('<?php echo $todo['Todo']['id']; ?>');">
+							<strong>完了したサブタスクの表示</strong>
+						</a>
+						
+						<ul id ="ends<?php echo $todo['Todo']['id']; ?>" class="end_tasks">
+							
+              <?php foreach ($todo['Task'] as $task) : ?>
 
-                    <?php if ($task['status'] == 1) : ?>
+                  <?php if ($task['status'] == 1) : ?>
 
-                        <li id="task_<?php echo $task['id']; ?>" class="end">
-                         <label class="checkbox">
-                            <?php echo $task['id']; ?>
-                            
-                            <?php echo $this->Form->postLink('<input type="checkbox" checked="checked">', array('controller' => 'tasks', 'action' => 'unchk', $task['id']), array('escape' => false)); ?>
-                           <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller' => 'tasks', 'action' => 'delete', $task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>                
-                            <?php echo $task['name']; ?>
-                         </label>
-                         
-                        </li>
+                      <li id="task_<?php echo $task['id']; ?>" class="end">
+                       <label class="checkbox">
+                          <?php echo $task['id']; ?>
+                          
+                          <?php echo $this->Form->postLink('<input type="checkbox" checked="checked">', array('controller' => 'tasks', 'action' => 'unchk', $task['id']), array('escape' => false)); ?>
+                         <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller' => 'tasks', 'action' => 'delete', $task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>                
+                          <?php echo $task['name']; ?>
+                       </label>
+                       
+                      </li>
 
-                    <?php else : ?>
+                  <?php else : ?>
 
-                    <?php endif; ?>
+                  <?php endif; ?>
 
-                <?php endforeach; ?>
+              <?php endforeach; ?>
+							
+						</ul>
 							
 						</div>
 
@@ -130,6 +139,10 @@ function hidesubs(objId){
 		$('.allow'+objId).removeClass("icon-chevron-down");
 	}
 	
+}
+
+function hideends(objId){
+	$('#ends'+objId).toggle();
 }
 </script>
 

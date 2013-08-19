@@ -4,6 +4,10 @@ body {
   background-color: #fDfDfD;
 }
 
+a {
+	cursor: pointer;
+}
+
 .navbar-inner .btn{
 	margin-top: 7px;
 }
@@ -94,7 +98,7 @@ textarea {
 	color:#888;
 }
 
-#act_tasks,#end_tasks {
+.act_tasks,.end_tasks {
 	margin-left: 10px;
 	list-style: none;
 }
