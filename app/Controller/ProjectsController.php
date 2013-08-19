@@ -27,7 +27,6 @@ class ProjectsController extends AppController {
     public function index() {
         $this->Project->recursive = 0;
         $this->set('title_for_layout', 'プロジェクト一覧');
-				$this->Session->write('Act_Project.id',$id);
         $this->set('projects', $this->Project->find('all'));
         if ($this->request->is('post')) {
             $this->Project->create();
