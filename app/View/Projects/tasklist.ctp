@@ -64,7 +64,7 @@
                 
                <?php echo $this->Form->create('Task',array('controller' => 'tasks', 'action' => 'add'));?>
                <?php echo $this->Form->input('Task.name',array('label'=>false));?>
-               <?php echo $this->Form->input('Task.rank',         array('type'=>'select','label'=>'優先度の設定','options'=>array('指定なし','低:(緑)','中:(黄)','高:(赤)')));?>
+               <?php echo $this->Form->input('Task.rank',         array('type'=>'select','label'=>'優先度の設定','options'=>array('指定なし:(グレー)','低:(緑)','中:(黄)','高:(赤)')));?>
                 <?php echo $this->Form->hidden('Task.todo_id',array('value'=>$todo['Todo']['id']));?>
                 
                 <?php echo $this->Form->hidden('Task.user_id', array('value' => $this->Session->read('Login.Id')));?>			
