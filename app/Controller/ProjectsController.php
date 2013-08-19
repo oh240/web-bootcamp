@@ -50,6 +50,7 @@ class ProjectsController extends AppController {
         if (!$this->Project->exists($id)) {
             throw new NotFoundException(__('Invalid project'));
         }
+				$this->set('title_for_layout', 'タスクリスト');
 				$this->Session->write('Act_Project.id',$id);
         $options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
         $this->set('project', $this->Project->find('first', $options));
