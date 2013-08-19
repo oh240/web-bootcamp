@@ -1,15 +1,11 @@
 	<?php echo $this->element('header') ;?>
+	
 	<div class="container">
-		<div class="alert alert-info">
-			<?php echo $this->Session->flash(); ?>
-		</div>
-		
-		<?php if($this->Session->check('Login.Id')):?>
-
-		<?php endif;?>
-		
+	
+		<?php echo $this->Session->flash(); ?>
+	
 		<div id="main">
-				<?php echo $this->fetch('content'); ?>
+			<?php echo $this->fetch('content'); ?>
 		</div>
 		
 	</div>

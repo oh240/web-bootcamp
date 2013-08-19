@@ -31,10 +31,10 @@ class ProjectsController extends AppController {
         if ($this->request->is('post')) {
             $this->Project->create();
             if ($this->Project->save($this->request->data)) {
-                $this->Session->setFlash(__('新規にプロジェクトを追加しました'));
+                $this->Session->setFlash('新規にプロジェクトを追加しました');
                 $this->redirect($this->referer());
             } else {
-							$this->Session->setFlash(__('新規プロジェクトの追加に失敗しました'));
+							$this->Session->setFlash('新規プロジェクトの追加に失敗しました');
             }
         }
     }
@@ -78,10 +78,10 @@ class ProjectsController extends AppController {
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Project->save($this->request->data)) {
-                $this->Session->setFlash(__('プロジェクトの変更を保存しました'));
+                $this->Session->setFlash('プロジェクトの変更を保存しました');
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('プロジェクトの変更を保存できませんでした。'));
+                $this->Session->setFlash('プロジェクトの変更を保存できませんでした');
             }
         } else {
             $options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
@@ -105,10 +105,10 @@ class ProjectsController extends AppController {
         }
         $this->request->onlyAllow('post', 'delete');
         if ($this->Project->delete()) {
-            $this->Session->setFlash(__('プロジェクトを削除しました'));
+            $this->Session->setFlash('プロジェクトを削除しました');
             $this->redirect(array('action' => 'index'));
         }
-        $this->Session->setFlash(__('プロジェクトを削除できませんでした'));
+        $this->Session->setFlash('プロジェクトを削除できませんでした');
         $this->redirect(array('action' => 'index'));
     }
 

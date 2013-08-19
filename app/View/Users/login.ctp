@@ -15,10 +15,11 @@
 			<br>
 			<?php 
 				echo $this->Html->link('新規登録',array('action'=>'add'),
-				array("class"=>'btn btn-success btn-large'));
+				array("class"=>'btn btn-success'));
 			?>
+			
 			<?php
-				echo $this->Form->submit('ログイン',array('class'=>'btn btn-primary btn-large','div'=>false));
+				echo $this->Form->submit('ログイン',array('class'=>'btn btn-primary ','div'=>false));
 			?>
 			<?php $this->Form->end();?>
 

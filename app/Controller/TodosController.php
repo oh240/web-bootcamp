@@ -27,10 +27,10 @@ class TodosController extends AppController {
         if ($this->request->is('post')) {
             $this->Todo->create();
             if ($this->Todo->save($this->request->data)) {
-                $this->Session->setFlash(__('新規メインタスクを追加しました'));
+                $this->Session->setFlash('新規メインタスクを追加しました','flash_success');
                 $this->redirect($this->referer());
             } else {
-                $this->Session->setFlash(__('新規メインタスクの追加に失敗しました'));
+                $this->Session->setFlash('新規メインタスクの追加に失敗しました','flash_error');
             }
         }
     }
@@ -48,10 +48,10 @@ class TodosController extends AppController {
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Todo->save($this->request->data)) {
-                $this->Session->setFlash(__('メインタスクの変更を保存しました'));
+                $this->Session->setFlash('メインタスクの変更を保存しました','flash_success');
                 $this->redirect($this->referer());
             } else {
-                $this->Session->setFlash(__('メインタスクの変更の保存に失敗しました。'));
+                $this->Session->setFlash('メインタスクの変更の保存に失敗しました。','flash_error');
             }
         } else {
             $options = array('conditions' => array('Todo.' . $this->Todo->primaryKey => $id));
@@ -73,10 +73,10 @@ class TodosController extends AppController {
         }
         $this->request->onlyAllow('post', 'delete');
         if ($this->Todo->delete()) {
-            $this->Session->setFlash(__('メインタスクを削除しました。'));
+            $this->Session->setFlash('メインタスクを削除しました。','flash_success');
             $this->redirect($this->referer());
         }
-        $this->Session->setFlash(__('メインタスクの削除に失敗しました。'));
+        $this->Session->setFlash('メインタスクの削除に失敗しました。','flash_error');
         $this->redirect($this->referer());
     }
 

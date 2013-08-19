@@ -37,7 +37,7 @@ class TasksController extends AppController {
      */
     public function view($id = null) {
         if (!$this->Task->exists($id)) {
-            throw new NotFoundException(__('このタスクは存在しません'));
+            throw new NotFoundException('このタスクは存在しません','flash_error');
         }
         $options = array('conditions' => array('Task.' .$this->Task->primaryKey => $id));
         $this->set('task', $this->Task->find('first', $options));
@@ -52,10 +52,10 @@ class TasksController extends AppController {
         if ($this->request->is('post')) {
             $this->Task->create();
             if ($this->Task->save($this->request->data)) {
-                $this->Session->setFlash(__('タスクを追加しました'));
+                $this->Session->setFlash('タスクを追加しました','flash_success');
                 $this->redirect($this->referer());
             } else {
-                $this->Session->setFlash(__('タスクの追加ができませんでした。'));
+                $this->Session->setFlash('タスクの追加ができませんでした。','flash_error');
             }
         }
     }
@@ -73,11 +73,11 @@ class TasksController extends AppController {
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Task->save($this->request->data)) {
-                $this->Session->setFlash(__('タスクの変更を保存しました'));
+                $this->Session->setFlash('タスクの変更を保存しました','flash_success');
 								$project_id = $this->Session->read('Act_Project.id');
                 $this->redirect(array('controller'=>'projects','action' => 'tasklist',$project_id));
             } else {
-                $this->Session->setFlash(__('タスクの変更を保存できませんでした。'));
+                $this->Session->setFlash('タスクの変更を保存できませんでした。','flash_error');
             }
         } else {
             $options = array('conditions' => array('Task.' . $this->Task->primaryKey => $id));
@@ -99,10 +99,10 @@ class TasksController extends AppController {
         }
         $this->request->onlyAllow('post', 'delete');
         if ($this->Task->delete()) {
-            $this->Session->setFlash('タスクを削除しました');
+            $this->Session->setFlash('タスクを削除しました','flash_success');
             $this->redirect($this->referer());
         }
-        $this->Session->setFlash('タスクを削除できませんでした');
+        $this->Session->setFlash('タスクを削除できませんでした','flash_error');
         $this->redirect($this->referer());
     }
 
@@ -117,11 +117,11 @@ class TasksController extends AppController {
         $this->request->onlyAllow('post', 'save');
         
         if ($this->Task->saveField('status',0)) {
-            $this->Session->setFlash('タスクを未完了状態に変更しました');
+            $this->Session->setFlash('タスクを未完了状態に変更しました','flash_success');
             $this->redirect($this->referer());
         }
         
-        $this->Session->setFlash('タスクの状態を変更できませんでした');
+        $this->Session->setFlash('タスクの状態を変更できませんでした','flash_error');
         $this->redirect($this->referer());
     }
     
@@ -134,11 +134,11 @@ class TasksController extends AppController {
         
         $this->request->onlyAllow('post', 'save');
         if ($this->Task->saveField('status',1)) {
-            $this->Session->setFlash('タスクを完了状態に変更しました');
+            $this->Session->setFlash('タスクを完了状態に変更しました','flash_success');
             $this->redirect($this->referer());
         }
         
-        $this->Session->setFlash('タスクの状態を変更できませんでした');
+        $this->Session->setFlash('タスクの状態を変更できませんでした','flash_error');
         $this->redirect($this->referer());
     }
 
