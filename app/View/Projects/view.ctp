@@ -9,9 +9,12 @@
 
     <?php foreach ($todos as $todo) : ?>
 
-        <h4>
-               <?php echo h($todo['Todo']['name']); ?>
-        </h4>
+      <h4>
+            <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller'=>'todos','action'=>'delete',$todo['Todo']['id']),array('escape'=>false),'メインタスクを削除しますがよろしいですか？（サブタスクも削除されます。）',$todo['Todo']['id']);?>
+						<i class="icon-chevron-right allow<?php echo $todo['Todo']['id']; ?>" onclick="hidesubs('<?php echo $todo['Todo']['id']; ?>');"></i>
+            <?php echo h($todo['Todo']['name']) ;?>
+      </h4>
+
 
         <ul class="subtasks" id="subs<?php echo $todo['Todo']['id']; ?>">
 

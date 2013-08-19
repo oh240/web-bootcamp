@@ -103,6 +103,6 @@ textarea {
 	list-style: none;
 }
 
-.end_tasks {
+.end_tasks,.subtasks {
 	display:none;
 }

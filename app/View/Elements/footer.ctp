@@ -1,12 +1,11 @@
 <div id="footer">
 
 </div>
-<script>
-        $(function() {
-            setTimeout(function() {
-                $('.alert').fadeOut("slow");
-            }, 1000);
-        });
-</script>
+
+<?php 
+	echo $this->Html->script('task_hide',array('inline'=>'false'));
+	echo $this->Html->script('flash_msg',array('inline'=>'false'));
+?>
+
 </body>
 </html>

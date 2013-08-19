@@ -19,3 +19,5 @@
 [19-Aug-2013 21:31:55] PHP Parse error:  syntax error, unexpected ')' in /var/www/html/cake_dev/web-bootcamp/app/Controller/UsersController.php on line 88
 [19-Aug-2013 21:32:52] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /var/www/html/cake_dev/web-bootcamp/app/Controller/UsersController.php on line 47
 [19-Aug-2013 22:27:04] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /var/www/html/cake_dev/web-bootcamp/app/View/Projects/tasklist.ctp on line 43
+[20-Aug-2013 00:05:20] PHP Parse error:  syntax error, unexpected '<' in /var/www/html/cake_dev/web-bootcamp/app/View/Elements/footer.ctp on line 11
+[20-Aug-2013 00:05:31] PHP Parse error:  syntax error, unexpected '<' in /var/www/html/cake_dev/web-bootcamp/app/View/Elements/footer.ctp on line 11
