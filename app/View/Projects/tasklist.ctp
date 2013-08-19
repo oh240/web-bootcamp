@@ -12,13 +12,11 @@
         <br />
         <h4>
               <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller'=>'todos','action'=>'delete',$todo['Todo']['id']),array('escape'=>false),'メインタスクを削除しますがよろしいですか？（サブタスクも削除されます。）',$todo['Todo']['id']);?>
-							<i class="icon-chevron-down"></i>
+							<i class="icon-chevron-down allow<?php echo $todo['Todo']['id']; ?>" onclick="hidesubs('<?php echo $todo['Todo']['id']; ?>');"></i>
               <?php echo $todo['Todo']['name'] ;?>
         </h4>
     
-        <br />
-    
-        <div class="subtasks">
+        <div class="subtasks" id="subs<?php echo $todo['Todo']['id']; ?>">
 					
 					<ul id="act_tasks">
 
@@ -94,7 +92,7 @@
 
                 <?php endforeach; ?>
 							
-						</ul>
+						</div>
 
     <?php endforeach; ?>
     <br />
@@ -116,4 +114,22 @@
         <?php echo $this->Form->end(); ?>
     </div>
 </div>
+
+<script>
+	
+	
+function hidesubs(objId){
+	
+	$('#subs'+objId).toggle();
+	
+	if ($('#subs'+objId).css('display') == 'block') {
+		$('.allow'+objId).addClass("icon-chevron-down");
+		$('.allow'+objId).removeClass("icon-chevron-right");
+	} else {
+		$('.allow'+objId).addClass("icon-chevron-right");
+		$('.allow'+objId).removeClass("icon-chevron-down");
+	}
+	
+}
+</script>
 

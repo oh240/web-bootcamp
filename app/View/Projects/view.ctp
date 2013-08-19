@@ -13,7 +13,7 @@
                <?php echo $todo['Todo']['name']; ?>
         </h4>
 
-        <ul class="subtasks">
+        <ul class="subtasks" id="subs<?php echo $todo['Todo']['id']; ?>">
 
                 <?php foreach ($todo['Task'] as $task) : ?>
             
