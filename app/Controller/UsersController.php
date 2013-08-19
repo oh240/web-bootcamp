@@ -42,7 +42,8 @@ class UsersController extends AppController {
 	
 	public function logout() {
 		$this->Auth->logout();
-		$this->Session->destroy();  		$this->Session->setFlash('ログアウト完了');
+		$this->Session->destroy();
+		$this->Session->setFlash('ログアウト完了');
 		return $this->redirect(array('action'=>'login'));
 	}
 

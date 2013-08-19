@@ -1,2 +1,9 @@
 [15-Aug-2013 15:06:18] PHP Parse error:  syntax error, unexpected T_STRING in /var/www/html/cake_dev/web-bootcamp/app/View/Projects/tasklist.ctp on line 23
 [15-Aug-2013 15:06:40] PHP Parse error:  syntax error, unexpected ';' in /var/www/html/cake_dev/web-bootcamp/app/View/Projects/tasklist.ctp on line 16
+[19-Aug-2013 10:51:02] PHP Parse error:  syntax error, unexpected T_ARRAY in /var/www/html/cake_dev/web-bootcamp/app/View/Projects/tasklist.ctp on line 45
+[19-Aug-2013 10:51:25] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /var/www/html/cake_dev/web-bootcamp/app/View/Projects/tasklist.ctp on line 45
+[19-Aug-2013 10:54:38] PHP Parse error:  syntax error, unexpected ')' in /var/www/html/cake_dev/web-bootcamp/app/View/Projects/tasklist.ctp on line 44
+[19-Aug-2013 11:02:52] PHP Parse error:  syntax error, unexpected ')' in /var/www/html/cake_dev/web-bootcamp/app/View/Projects/tasklist.ctp on line 44
+[19-Aug-2013 11:15:14] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /var/www/html/cake_dev/web-bootcamp/app/View/Tasks/edit.ctp on line 4
+[19-Aug-2013 11:40:38] PHP Fatal error:  Call to undefined method SessionComponent::wrire() in /var/www/html/cake_dev/web-bootcamp/app/Controller/ProjectsController.php on line 65
+[19-Aug-2013 11:40:44] PHP Fatal error:  Call to undefined method SessionComponent::wrire() in /var/www/html/cake_dev/web-bootcamp/app/Controller/ProjectsController.php on line 65

@@ -73,8 +73,9 @@ class TasksController extends AppController {
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Task->save($this->request->data)) {
-                $this->Session->setFlash(__('タスクの変更を保存しました。'));
-                $this->redirect(array('action' => 'index'));
+                $this->Session->setFlash(__('タスクの変更を保存しました'));
+								$project_id = $this->Session->read('Act_Project.id');
+                $this->redirect(array('controller'=>'projects','action' => 'tasklist',$project_id));
             } else {
                 $this->Session->setFlash(__('タスクの変更を保存できませんでした。'));
             }
@@ -104,31 +105,6 @@ class TasksController extends AppController {
         $this->Session->setFlash('タスクを削除できませんでした');
         $this->redirect($this->referer());
     }
-
-    /*
-    public function chk($id) {
-
-        $this->Task->id = $id;
-        if (!$this->Task->exists()) {
-            throw new NotFoundException(__('Invalid project'));
-        }
-
-        $this->request->onlyAllow('post', 'save');
-
-        if ($this->request->is('ajax')) {
-            if ($this->Task->saveField('status', 1)) {
-                $this->autoRender = FALSE;
-                $this->autoLayout = FALSE;
-                $response = array('id' => $id);
-                $this->Session->setFlash('サブタスクを完了しました');
-                $this->header('Content-Type: application/json');
-                echo json_encode($response);
-                exit();
-            }
-        }
-    }
-     
-    */
 
     public function unchk($id = null) {
         

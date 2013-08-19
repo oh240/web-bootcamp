@@ -41,7 +41,8 @@
                             </span>
                         <?php echo $this->Form->postLink('<input type="checkbox">', array('controller' => 'tasks', 'action' => 'chk', $task['id']), array('escape' => false)); ?>
                         <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller' => 'tasks', 'action' => 'delete', $task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>
-                        <?php echo $task['name']; ?>
+											<?php echo $this->Html->link('<i class="icon-pencil"></i>', array('controller' => 'tasks', 'action' => 'edit',$task['id']),array('escape' => false)); ?>
+												<?php echo $this->Html->link(h($task['name']),array('controller'=>'tasks','action'=>'view',$task['id']))?>
                        </label>
                         
                     </li>
@@ -51,7 +52,7 @@
                 <?php endif; ?>
 
             <?php endforeach; ?>
-					</ul>
+
 						
             <li class="add_subtask">
 
@@ -62,17 +63,14 @@
                 </p>
                 
                <?php echo $this->Form->create('Task',array('controller' => 'tasks', 'action' => 'add'));?>
-                
-                <?php echo $this->Form->input('Task.name',array('label'=>false));?>
-                <?php echo $this->Form->input('Task.rank',
-                        array('type'=>'select','label'=>'優先度の設定','options'=>array('指定なし','低','中','高')));?>     
+               <?php echo $this->Form->input('Task.name',array('label'=>false));?>
+               <?php echo $this->Form->input('Task.rank',         array('type'=>'select','label'=>'優先度の設定','options'=>array('指定なし','低:(緑)','中:(黄)','高:(赤)')));?>
                 <?php echo $this->Form->hidden('Task.todo_id',array('value'=>$todo['Todo']['id']));?>
                 
                 <?php echo $this->Form->hidden('Task.user_id', array('value' => $this->Session->read('Login.Id')));?>			
-                
                 <?php echo $this->Form->submit('サブタスクを追加する',array('class'=>'btn btn-success btn-mini'));?>
-                
                 <?php echo $this->Form->end();?>
+							</li>
                 
                 
                 <?php foreach ($todo['Task'] as $task) : ?>
@@ -95,10 +93,8 @@
                     <?php endif; ?>
 
                 <?php endforeach; ?>
-
-            </li>
-
-        </ul>
+							
+						</ul>
 
     <?php endforeach; ?>
     <br />

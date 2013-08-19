@@ -27,13 +27,15 @@ class ProjectsController extends AppController {
     public function index() {
         $this->Project->recursive = 0;
         $this->set('title_for_layout', 'プロジェクト一覧');
+				$this->Session->write('Act_Project.id',$id);
         $this->set('projects', $this->Project->find('all'));
         if ($this->request->is('post')) {
             $this->Project->create();
             if ($this->Project->save($this->request->data)) {
                 $this->Session->setFlash(__('新規にプロジェクトを追加しました'));
                 $this->redirect($this->referer());
-            } else {           $this->Session->setFlash(__('新規プロジェクトの追加に失敗しました'));
+            } else {
+							$this->Session->setFlash(__('新規プロジェクトの追加に失敗しました'));
             }
         }
     }
@@ -49,6 +51,7 @@ class ProjectsController extends AppController {
         if (!$this->Project->exists($id)) {
             throw new NotFoundException(__('Invalid project'));
         }
+				$this->Session->write('Act_Project.id',$id);
         $options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
         $this->set('project', $this->Project->find('first', $options));
         $this->Todo->recursive = 2;
@@ -59,6 +62,7 @@ class ProjectsController extends AppController {
     }
 
     public function tasklist($id = null) {
+				$this->Session->write('Act_Project.id',$id);
         $this->view($id);
     }
 
