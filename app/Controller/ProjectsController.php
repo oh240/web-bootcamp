@@ -61,7 +61,6 @@ class ProjectsController extends AppController {
     }
 
     public function tasklist($id = null) {
-				$this->Session->write('Act_Project.id',$id);
         $this->view($id);
     }
 
