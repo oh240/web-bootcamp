@@ -62,7 +62,8 @@ textarea {
 }
 
 .add_subtask {
-	width: 65%;
+	width: 75%;
+	max-width: 650px;
 	margin: 30px 0;
 	padding: 10px 20px;
 	border-radius: 3px;
@@ -79,7 +80,8 @@ textarea {
 }
 
 .subtasks li{
-	width: 60%;
+	width: 75%;
+	max-width: 650px;
 	margin: 10px 0;
 }
 
@@ -93,5 +95,6 @@ textarea {
 }
 
 #act_tasks,#end_tasks {
+	margin-left: 10px;
 	list-style: none;
 }
