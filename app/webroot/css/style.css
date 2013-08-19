@@ -102,3 +102,7 @@ textarea {
 	margin-left: 10px;
 	list-style: none;
 }
+
+.end_tasks {
+	display:none;
+}
