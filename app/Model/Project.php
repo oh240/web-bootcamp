@@ -30,6 +30,10 @@ class Project extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+			'between' => array(
+				'rule'=> array('between',2,60),
+				'message' => 'プロジェクト名は2〜60(全角30)字以内で入力してください',
+			),
 		),
 		'user_id' => array(
 			'numeric' => array(

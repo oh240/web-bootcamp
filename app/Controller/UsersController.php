@@ -30,10 +30,11 @@ class UsersController extends AppController {
 				$sessionKey = $this->User->LoginUser($this->request->data['User']['username']);
 				$this->Session->write('Login.Id',$sessionKey['User']['id']);
 				$this->Session->write('Login.Nickname',$sessionKey['User']['nickname']);
+				$this->Session->setFlash('ようこそ '.$sessionKey['User']['nickname'].' さん','flash_success');
 				return $this->redirect(array('controller'=>'projects','action'=>'index'));
 			}
 			else {
-				$this->Session->setFlash('ユーザー名かパスワードを間違えています!!');
+				$this->Session->setFlash('ユーザー名かパスワードを間違えています!!','flash_error');
 			}
 			
 		}
@@ -43,7 +44,7 @@ class UsersController extends AppController {
 	public function logout() {
 		$this->Auth->logout();
 		$this->Session->destroy();
-		$this->Session->setFlash('ログアウト完了');
+		$this->Session->setFlash('ログアウト完了','flash_success');
 		return $this->redirect(array('action'=>'login'));
 	}
 
@@ -76,15 +77,15 @@ public function view($id = null) {
             		      
 						$this->User->create();
 						if ($this->User->save($this->request->data)) {
-							$this->Session->setFlash(__('新規ユーザーの登録完了'));
+							$this->Session->setFlash('新規ユーザーの登録完了','flash_success');
 							$this->redirect(array('controller'=>'projects','action' => 'index'));
 						} else {
-							$this->Session->setFlash(__('新規ユーザーの追加に失敗しました。'));
+							$this->Session->setFlash('新規ユーザーの追加に失敗しました','flash_error');
 							$this->redirect($this->referer());
 						}
 						
         } else {
-            $this->Session->setFlash(__('確認のパスワードが間違えています'));
+            $this->Session->setFlash('確認のパスワードが間違えています','flash_error');
             $this->redirect($this->referer());
             exit();
       }
@@ -107,7 +108,7 @@ public function view($id = null) {
             $this->request->data['User']['password'] = $this->request->data['User']['new_password1'];
             unset($this->request->data['User']['new_password1'],$this->request->data['User']['new_password2']);
         } else {
-            $this->Session->setFlash(__('確認のパスワードが間違えています'));
+            $this->Session->setFlash('確認のパスワードが間違えています','flash_error');
             $this->redirect($this->referer());
             exit();
         }
@@ -115,10 +116,10 @@ public function view($id = null) {
 			if ($this->User->save($this->request->data)) {
         $sessionKey = $this->User->LoginUser($this->request->data['User']['username']);
         $this->Session->write('Login.Nickname',$sessionKey['User']['nickname']);
-				$this->Session->setFlash(__('ユーザーの設定変更を保存しました'));
+				$this->Session->setFlash('ユーザーの設定変更を保存しました','flash_success');
 				$this->redirect($this->referer());
 			} else {
-				$this->Session->setFlash(__('ユーザーの設定変更が保存出来ませんでした'));
+				$this->Session->setFlash('ユーザーの設定変更が保存出来ませんでした','flash_error');
 			}
 		} else {
 			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
@@ -140,10 +141,10 @@ public function view($id = null) {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->User->delete()) {
-			$this->Session->setFlash(__('ユーザーの削除を完了しました。'));
+			$this->Session->setFlash('ユーザーの削除を完了しました','flash_success');
 			$this->redirect($this->referer());
 		}
-		$this->Session->setFlash(__('ユーザーの削除ができませんでした。'));
+		$this->Session->setFlash('ユーザーの削除ができませんでした','flash_error');
     $this->redirect($this->referer());
 	}
 }

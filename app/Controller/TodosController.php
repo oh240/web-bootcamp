@@ -31,6 +31,7 @@ class TodosController extends AppController {
                 $this->redirect($this->referer());
             } else {
                 $this->Session->setFlash('新規メインタスクの追加に失敗しました','flash_error');
+								$this->redirect($this->referer());
             }
         }
     }
@@ -52,6 +53,7 @@ class TodosController extends AppController {
                 $this->redirect($this->referer());
             } else {
                 $this->Session->setFlash('メインタスクの変更の保存に失敗しました。','flash_error');
+								
             }
         } else {
             $options = array('conditions' => array('Todo.' . $this->Todo->primaryKey => $id));

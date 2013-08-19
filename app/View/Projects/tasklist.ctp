@@ -1,5 +1,5 @@
 <h2>
-    <?php echo $project['Project']['name']; ?>のタスクリスト
+    <?php echo h($project['Project']['name']); ?>のタスクリスト
 </h2>
 
 <hr>
@@ -13,7 +13,7 @@
         <h4>
               <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller'=>'todos','action'=>'delete',$todo['Todo']['id']),array('escape'=>false),'メインタスクを削除しますがよろしいですか？（サブタスクも削除されます。）',$todo['Todo']['id']);?>
 							<i class="icon-chevron-down allow<?php echo $todo['Todo']['id']; ?>" onclick="hidesubs('<?php echo $todo['Todo']['id']; ?>');"></i>
-              <?php echo $todo['Todo']['name'] ;?>
+              <?php echo h($todo['Todo']['name']) ;?>
         </h4>
     
         <div class="subtasks" id="subs<?php echo $todo['Todo']['id']; ?>">
@@ -40,7 +40,7 @@
                         <?php echo $this->Form->postLink('<input type="checkbox">', array('controller' => 'tasks', 'action' => 'chk', $task['id']), array('escape' => false)); ?>
                         <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller' => 'tasks', 'action' => 'delete', $task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>
 											<?php echo $this->Html->link('<i class="icon-pencil"></i>', array('controller' => 'tasks', 'action' => 'edit',$task['id']),array('escape' => false)); ?>
-												<?php echo $this->Html->link(h($task['name']),array('controller'=>'tasks','action'=>'view',$task['id']))?>
+												<?php echo $this->Html->link($task['name'],array('controller'=>'tasks','action'=>'view',$task['id']));?>
                        </label>
                         
                     </li>
@@ -85,10 +85,9 @@
                       <li id="task_<?php echo $task['id']; ?>" class="end">
                        <label class="checkbox">
                           <?php echo $task['id']; ?>
-                          
                           <?php echo $this->Form->postLink('<input type="checkbox" checked="checked">', array('controller' => 'tasks', 'action' => 'unchk', $task['id']), array('escape' => false)); ?>
                          <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller' => 'tasks', 'action' => 'delete', $task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>                
-                          <?php echo $task['name']; ?>
+                          <?php echo h($task['name']); ?>
                        </label>
                        
                       </li>

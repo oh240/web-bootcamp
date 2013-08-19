@@ -31,7 +31,15 @@ class User extends AppModel {
 					array(
 						'rule' => array('isUnique'),
 						'message' => '既に登録されているユーザー名です',
-						),
+					),
+					'between' => array(
+						'rule'=> array('between',2,60),
+						'message' => 'ユーザーIDは2〜60字以内で入力してください',
+					),
+					'alphaNumeric' => array(
+						'rule'=> array('alphaNumeric'),
+						'message' => 'ユーザー名は半角英数字のみ有効です',
+					),
 				),
 			'password' => array(
 				'notempty' => array(
@@ -42,13 +50,13 @@ class User extends AppModel {
 					//'last' => false, // Stop validation after this rule
 					//'on' => 'create', // Limit validation to 'create' or 'update' operations
 					),
-					array (
-						'rule' => array('minLength',4),
-						'message' =>'短すぎます',
+					'between' => array(
+						'rule'=> array('between',2,60),
+						'message' => 'パスワードは2〜60字以内で入力してください',
 					),
-					array (
-						'rule' => array('maxLength',255),
-						'message' =>'長すぎます',
+					'alphaNumeric' => array(
+						'rule'=> array('alphaNumeric'),
+						'message' => 'パスワードは半角英数字のみ有効です',
 					),
 				),
 			'nickname' => array(
@@ -60,6 +68,10 @@ class User extends AppModel {
 						//'last' => false, // Stop validation after this rule
 						//'on' => 'create', // Limit validation to 'create' or 'update' operations
 						),
+					),
+					'between' => array(
+						'rule'=> array('between',2,60),
+						'message' => '表示名(ニックネーム)は2〜60字以内(全角30字以内)で入力してください',
 					),
 	);
 	

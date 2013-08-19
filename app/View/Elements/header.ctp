@@ -38,7 +38,7 @@
 
                                 <div class="white pull-left">
                                     ようこそ
-                                    <?php echo $this->Session->read('Login.Nickname'); ?>
+                                    <?php echo h($this->Session->read('Login.Nickname')); ?>
                                     さん
                                 </div>
                             

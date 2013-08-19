@@ -7,3 +7,15 @@
 [19-Aug-2013 11:15:14] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /var/www/html/cake_dev/web-bootcamp/app/View/Tasks/edit.ctp on line 4
 [19-Aug-2013 11:40:38] PHP Fatal error:  Call to undefined method SessionComponent::wrire() in /var/www/html/cake_dev/web-bootcamp/app/Controller/ProjectsController.php on line 65
 [19-Aug-2013 11:40:44] PHP Fatal error:  Call to undefined method SessionComponent::wrire() in /var/www/html/cake_dev/web-bootcamp/app/Controller/ProjectsController.php on line 65
+[19-Aug-2013 21:28:40] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /var/www/html/cake_dev/web-bootcamp/app/Controller/ProjectsController.php on line 37
+[19-Aug-2013 21:29:07] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /var/www/html/cake_dev/web-bootcamp/app/Controller/ProjectsController.php on line 37
+[19-Aug-2013 21:29:10] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /var/www/html/cake_dev/web-bootcamp/app/Controller/ProjectsController.php on line 37
+[19-Aug-2013 21:29:26] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /var/www/html/cake_dev/web-bootcamp/app/Controller/ProjectsController.php on line 37
+[19-Aug-2013 21:29:48] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /var/www/html/cake_dev/web-bootcamp/app/Controller/ProjectsController.php on line 37
+[19-Aug-2013 21:29:49] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /var/www/html/cake_dev/web-bootcamp/app/Controller/ProjectsController.php on line 37
+[19-Aug-2013 21:29:53] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /var/www/html/cake_dev/web-bootcamp/app/Controller/ProjectsController.php on line 37
+[19-Aug-2013 21:29:57] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /var/www/html/cake_dev/web-bootcamp/app/Controller/ProjectsController.php on line 37
+[19-Aug-2013 21:30:00] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /var/www/html/cake_dev/web-bootcamp/app/Controller/ProjectsController.php on line 37
+[19-Aug-2013 21:31:55] PHP Parse error:  syntax error, unexpected ')' in /var/www/html/cake_dev/web-bootcamp/app/Controller/UsersController.php on line 88
+[19-Aug-2013 21:32:52] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /var/www/html/cake_dev/web-bootcamp/app/Controller/UsersController.php on line 47
+[19-Aug-2013 22:27:04] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /var/www/html/cake_dev/web-bootcamp/app/View/Projects/tasklist.ctp on line 43

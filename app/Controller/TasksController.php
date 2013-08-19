@@ -56,6 +56,7 @@ class TasksController extends AppController {
                 $this->redirect($this->referer());
             } else {
                 $this->Session->setFlash('タスクの追加ができませんでした。','flash_error');
+								$this->redirect($this->referer());
             }
         }
     }
