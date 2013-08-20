@@ -17,6 +17,7 @@ CREATE TABLE `tasks` (
  `user_id` int(10) NOT NULL,
  `todo_id` int(10) NOT NULL,
  `status` int(1) NOT NULL,
+ `rank` int(1) NOT NULL,
  `created` datetime NOT NULL,
  `modified` datetime NOT NULL,
  PRIMARY KEY (`id`)

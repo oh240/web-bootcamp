@@ -52,10 +52,9 @@
             <?php endforeach; ?>
 						
 					</ul>
-
-						
-            <div class="add_subtask">
-
+					
+					<div class="add_subtask">
+					
                 <p>
                     <strong> 
                         サブタスクの追加
@@ -70,7 +69,7 @@
                 <?php echo $this->Form->hidden('Task.user_id', array('value' => $this->Session->read('Login.Id')));?>			
                 <?php echo $this->Form->submit('サブタスクを追加する',array('class'=>'btn btn-success btn-mini'));?>
                 <?php echo $this->Form->end();?>
-						</div>
+					</div>
 						
 						<a onclick="hideends('<?php echo $todo['Todo']['id']; ?>');">
 							<strong>完了したサブタスクの表示</strong>

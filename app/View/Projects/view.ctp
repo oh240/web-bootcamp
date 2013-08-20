@@ -15,9 +15,8 @@
             <?php echo h($todo['Todo']['name']) ;?>
       </h4>
 
-
-        <ul class="subtasks" id="subs<?php echo $todo['Todo']['id']; ?>">
-
+        <div class="subtasks" id="subs<?php echo $todo['Todo']['id']; ?>">
+					<ul class="act_tasks">
                 <?php foreach ($todo['Task'] as $task) : ?>
             
                     <?php if ( $task['status'] == "0" ) : ?>
@@ -38,14 +37,14 @@
 	                        <?php echo $this->Form->postLink('<input type="checkbox">', array('controller' => 'tasks', 'action' => 'chk', $task['id']), array('escape' => false)); ?>
 	                        <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller' => 'tasks', 'action' => 'delete', $task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>
 													<?php echo $this->Html->link('<i class="icon-pencil"></i>', array('controller' => 'tasks', 'action' => 'edit',$task['id']),array('escape' => false)); ?>
-	                       	<?php echo $this->Html->link(h($task['name']),array('controller'=>'tasks','action'=>'view',$task['id']));?>
+	                       	<?php echo $this->Html->link($task['name'],array('controller'=>'tasks','action'=>'view',$task['id']));?>
 	                       </label>
                     
                     <?php endif ;?>
 
                 <?php endforeach; ?>
-
-        </ul>
+					</ul>
+				</div>
     
      <hr />
 

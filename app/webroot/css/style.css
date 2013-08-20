@@ -106,3 +106,16 @@ textarea {
 .end_tasks,.subtasks {
 	display:none;
 }
+
+
+.check_big {
+	font-size: 16px;
+}
+
+h3.checkbox {
+	line-height: 20px;
+}
+
+.comment-form textarea{
+	width: 80%;
+}
