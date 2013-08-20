@@ -2,13 +2,13 @@ CREATE DATABASE webbootcamp CHARACTER SET utf8;
 
 use webbootcamp ;
 
-CREATE TABLE `users` (  
-`id` int(10) NOT NULL AUTO_INCREMENT,  
-`username` varchar(255) NOT NULL,  
+CREATE TABLE `users` (
+`id` int(10) NOT NULL AUTO_INCREMENT,
+`username` varchar(255) NOT NULL,
 `password` varchar(255) NOT NULL,
-`nickname` varchar(255) NOT NULL,  
-`created` datetime NOT NULL,  
-`modified` datetime NOT NULL,  
+`nickname` varchar(255) NOT NULL,
+`created` datetime NOT NULL,
+`modified` datetime NOT NULL,
 PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `tasks` (
@@ -35,11 +35,11 @@ CREATE TABLE `todos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `projects` (
-`id` int(10) NOT NULL AUTO_INCREMENT,  
-`name` varchar(255) NOT NULL,  
-`user_id` int(10) NOT NULL,  
-`created` datetime NOT NULL,  
-`modified` datetime NOT NULL,  
+`id` int(10) NOT NULL AUTO_INCREMENT,
+`name` varchar(255) NOT NULL,
+`user_id` int(10) NOT NULL,
+`created` datetime NOT NULL,
+`modified` datetime NOT NULL,
 PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `comments` (
@@ -52,3 +52,23 @@ CREATE TABLE `comments` (
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `threads` (
+`id` int(10) NOT NULL AUTO_INCREMENT,
+`project_id` int(10) NOT NULL,
+`user_id` int(10) NOT NULL,
+`title` varchar(255) NOT NULL,
+`body` varchar(510) NOT NULL,
+`created` datetime NOT NULL,
+`modified` datetime NOT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `replies` (
+ `id` int(10) NOT NULL AUTO_INCREMENT,
+ `thread_id` int(10) NOT NULL,
+ `user_id` int(10) NOT NULL,
+ `body` varchar(255) NOT NULL,
+ `created` datetime NOT NULL,
+ `modified` datetime NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -107,6 +107,7 @@ class Task extends AppModel {
         'Comment' => array(
             'className' => 'Comment',
             'foreignKey' => 'task_id',
+            'dependent' => true,
             'conditions' => '',
             'fields' => '',
             'order' => ''

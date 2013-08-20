@@ -54,3 +54,9 @@
      </div>
 
 </div>
+
+<h3>掲示板</h3>
+
+<div class="well">
+
+</div>

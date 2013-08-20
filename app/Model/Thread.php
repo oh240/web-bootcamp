@@ -1,10 +1,17 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Comment Model
+ * Thread Model
  *
  */
-class Comment extends AppModel {
+class Thread extends AppModel {
+
+/**
+ * Display field
+ *
+ * @var string
+ */
+	public $displayField = 'title';
 
 /**
  * Validation rules
@@ -12,7 +19,7 @@ class Comment extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'task_id' => array(
+		'project_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -32,7 +39,7 @@ class Comment extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'body' => array(
+		'title' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
 				//'message' => 'Your custom message here',
@@ -50,23 +57,23 @@ class Comment extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-	);
-
-	public $belongsTo = array(
-		'User' => array(
-			'className' => 'User',
-			'foreignKey' => 'user_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'Task' => array(
-			'className' => 'Task',
-			'foreignKey' => 'task_id',
-			'dependent' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
+		'body' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+			'between' => array(
+				'rule' => array('between',2,500),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
 		),
 	);
 }

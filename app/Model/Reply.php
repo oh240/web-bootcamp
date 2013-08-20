@@ -1,10 +1,10 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Comment Model
+ * Reply Model
  *
  */
-class Comment extends AppModel {
+class Reply extends AppModel {
 
 /**
  * Validation rules
@@ -12,7 +12,7 @@ class Comment extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'task_id' => array(
+		'thread_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -42,31 +42,13 @@ class Comment extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 			'between' => array(
-				'rule' => array('between',2,255),
+				'rule' => array('between',2,500),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
-	);
-
-	public $belongsTo = array(
-		'User' => array(
-			'className' => 'User',
-			'foreignKey' => 'user_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'Task' => array(
-			'className' => 'Task',
-			'foreignKey' => 'task_id',
-			'dependent' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 	);
 }

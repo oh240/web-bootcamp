@@ -46,7 +46,7 @@ class CommentsController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Comment->delete()) {
-							$this->Session->setFlash('コメントの削除に成功しました','flash_success');
+			$this->Session->setFlash('コメントの削除に成功しました','flash_success');
 			$this->redirect($this->referer());
 		}
 		$this->Session->setFlash('コメントの投稿に失敗しました','flash_error');
