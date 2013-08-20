@@ -94,8 +94,8 @@ textarea {
 	text-decoration: line-through;
 }
 
-.end a {
-	color:#888;
+.end a:hover {
+	text-decoration: underline;
 }
 
 .act_tasks,.end_tasks {

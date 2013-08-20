@@ -4,7 +4,7 @@
         <?php echo $this->Html->charset(); ?>
         <title>
             <?php echo $title_for_layout; ?> : Web BootCamp
-            
+
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
@@ -41,10 +41,10 @@
                                     <?php echo h($this->Session->read('Login.Nickname')); ?>
                                     さん
                                 </div>
-                            
+
                              <?php echo $this->Html->link ('ユーザーの設定', array('controller' => 'users', 'action' => 'edit',$this->Session->read('Login.Id')), array('class' => 'btn btn-success btn-mini')); ?>
-                            
-                            
+
+
                              <?php echo $this->Html->link('ログアウト', array('controller' => 'users', 'action' => 'logout'), array('class' => 'btn btn-info btn-mini'));?>
 
                             <?php else : ?>
@@ -62,3 +62,4 @@
                 </div>
             </div>
         </div>
+

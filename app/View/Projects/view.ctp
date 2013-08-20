@@ -1,8 +1,8 @@
-<br />
+<?php
+	$this->Html->addCrumb($project['Project']['name'],array());
+?>
 <h2><?php echo h($project['Project']['name']); ?></h2>
 <hr />
-
-<?php echo $this->element('navbar'); ?>
 
 <h3>タスクリスト</h3>
 <div class="well">
@@ -18,15 +18,15 @@
         <div class="subtasks" id="subs<?php echo $todo['Todo']['id']; ?>">
 					<ul class="act_tasks">
                 <?php foreach ($todo['Task'] as $task) : ?>
-            
+
                     <?php if ( $task['status'] == "0" ) : ?>
-            
+
 	                    <li id="task_<?php echo $task['id']; ?>">
-	                     <label class="checkbox">
+	                     <div class="checkbox">
 	                        <?php if ($task['rank'] == 1) :?>
 	                            <span class="badge badge-success">
 	                        <?php elseif ($task['rank'] == 2) :?>
-	                            <span class="badge badge-warning"> 
+	                            <span class="badge badge-warning">
 	                        <?php elseif ($task['rank'] == 3) :?>
 	                            <span class="badge badge-important">
 	                        <?php else:?>
@@ -36,16 +36,16 @@
 	                            </span>
 	                        <?php echo $this->Form->postLink('<input type="checkbox">', array('controller' => 'tasks', 'action' => 'chk', $task['id']), array('escape' => false)); ?>
 	                        <?php echo $this->Form->postLink('<i class="icon-remove"></i>', array('controller' => 'tasks', 'action' => 'delete', $task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>
-													<?php echo $this->Html->link('<i class="icon-pencil"></i>', array('controller' => 'tasks', 'action' => 'edit',$task['id']),array('escape' => false)); ?>
+									<?php echo $this->Html->link('<i class="icon-pencil"></i>', array('controller' => 'tasks', 'action' => 'edit',$task['id']),array('escape' => false)); ?>
 	                       	<?php echo $this->Html->link($task['name'],array('controller'=>'tasks','action'=>'view',$task['id']));?>
-	                       </label>
-                    
+	                       </div>
+
                     <?php endif ;?>
 
                 <?php endforeach; ?>
 					</ul>
 				</div>
-    
+
      <hr />
 
     <?php endforeach; ?>

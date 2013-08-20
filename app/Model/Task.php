@@ -32,10 +32,10 @@ class Task extends AppModel {
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
-						'between' => array(
-							'rule'=> array('between',2,60),
-							'message' => 'サブタスク名は2〜60(全角30)字以内で入力してください',
-						),
+			'between' => array(
+				'rule'=> array('between',2,60),
+				'message' => 'サブタスク名は2〜60(全角30)字以内で入力してください',
+			),
         ),
         'user_id' => array(
             'numeric' => array(
@@ -100,6 +100,16 @@ class Task extends AppModel {
             'conditions' => '',
             'fields' => '',
             'order' => ''
-        )
+        ),
+    );
+
+    public $hasMany = array(
+        'Comment' => array(
+            'className' => 'Comment',
+            'foreignKey' => 'task_id',
+            'conditions' => '',
+            'fields' => '',
+            'order' => ''
+        ),
     );
 }

@@ -39,10 +39,12 @@ class TasksController extends AppController {
         if (!$this->Task->exists($id)) {
             throw new NotFoundException('このタスクは存在しません','flash_error');
         }
+        $this->Task->recursive = 2;
         $options = array('conditions' => array('Task.' .$this->Task->primaryKey => $id));
         $this->set('task', $this->Task->find('first', $options));
+        $this->set("referer", $this->referer());
     }
-    
+
     /**
      * add method
      *
@@ -56,7 +58,7 @@ class TasksController extends AppController {
                 $this->redirect($this->referer());
             } else {
                 $this->Session->setFlash('タスクの追加ができませんでした。','flash_error');
-								$this->redirect($this->referer());
+				$this->redirect($this->referer());
             }
         }
     }
@@ -75,7 +77,7 @@ class TasksController extends AppController {
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Task->save($this->request->data)) {
                 $this->Session->setFlash('タスクの変更を保存しました','flash_success');
-								$project_id = $this->Session->read('Act_Project.id');
+				$project_id = $this->Session->read('Act_Project.id');
                 $this->redirect(array('controller'=>'projects','action' => 'tasklist',$project_id));
             } else {
                 $this->Session->setFlash('タスクの変更を保存できませんでした。','flash_error');
@@ -108,37 +110,37 @@ class TasksController extends AppController {
     }
 
     public function unchk($id = null) {
-        
+
         $this->Task->id = $id;
-        
+
         if (!$this->Task->exists()) {
             throw new NotFoundException(__('Invalid task'));
         }
-        
+
         $this->request->onlyAllow('post', 'save');
-        
+
         if ($this->Task->saveField('status',0)) {
             $this->Session->setFlash('タスクを未完了状態に変更しました','flash_success');
             $this->redirect($this->referer());
         }
-        
+
         $this->Session->setFlash('タスクの状態を変更できませんでした','flash_error');
         $this->redirect($this->referer());
     }
-    
-    
+
+
     public function chk($id = null) {
         $this->Task->id = $id;
         if (!$this->Task->exists()) {
             throw new NotFoundException(__('Invalid task'));
         }
-        
+
         $this->request->onlyAllow('post', 'save');
         if ($this->Task->saveField('status',1)) {
             $this->Session->setFlash('タスクを完了状態に変更しました','flash_success');
             $this->redirect($this->referer());
         }
-        
+
         $this->Session->setFlash('タスクの状態を変更できませんでした','flash_error');
         $this->redirect($this->referer());
     }
