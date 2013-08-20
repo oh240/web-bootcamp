@@ -7,15 +7,15 @@
 <div class="tasks view">
 	<?php if ($task['Task']['status'] == 1):?>
 	<h3 class="checkbox end">
-		<?php echo $this->Form->postLink('<input type="checkbox" class="check_big" checked="checked">', array('controller' => 'tasks', 'action' => 'unchk', $task['Task']['id']), array('escape' => false)); ?>
+		<?php echo $this->Form->postLink('<input type="checkbox" class="check_big" checked="checked"> ', array('controller' => 'tasks', 'action' => 'unchk', $task['Task']['id']), array('escape' => false)); ?>
 	<?php else :?>
 	<h3 class="checkbox">
 		<?php echo $this->Form->postLink('<input type="checkbox" class="check_big">', array('controller' => 'tasks', 'action' => 'chk', $task['Task']['id']), array('escape' => false)); ?>
-	<?php endif?>
-		<?php echo h($task['Task']['name']);?>
+	<?php endif ;?>
+	<?php echo h($task['Task']['name']);?>
 	</h3>
-	<hr>
 
+	<hr>
 	<h4><i class="icon-comment"></i> このサブタスクのコメント</h4>
 
 	<div id="comments">
@@ -25,6 +25,9 @@
 		  <a class="pull-left thumbnail" href="#">
 				<img src="http://placekitten.com/64/64" />
 		  </a>
+		  <?php if($comment['user_id'] === $this->Session->read('Login.Id')):?>
+				<?php echo $this->Form->postLink('<i class="icon-trash pull-right"></i>', array('controller' => 'comments', 'action' => 'delete', $comment['id']), array('escape' => false),'コメントを削除しますがよろしいですか？'); ?>
+			<?php endif; ?>
 			<div class="media-body">
 		    <h5 class="media-heading">
 		    	<i class="icon-user"></i><?php echo h($comment['User']['nickname']);?>
