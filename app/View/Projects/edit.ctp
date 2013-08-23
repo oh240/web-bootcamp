@@ -1,22 +1,18 @@
-<div class="projects form">
-<?php echo $this->Form->create('Project'); ?>
-	<fieldset>
-		<legend><?php echo __('Edit Project'); ?></legend>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('name');
-		echo $this->Form->input('user_id');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
+<h2>プロジェクトの変更</h2>
+<hr />
+<div class="well add_solo">
+<br />
+<?php echo $this->Form->create('Project');?>
+<p>
+     <strong>新規プロジェクトの名前</strong>
+</p>
+<?php echo $this->Form->input('name',array('label'=>false,'class'=>'span11'));?>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Project.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Project.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Projects'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
-	</ul>
+<?php echo $this->Form->hidden('user_id', array('value' => $this->Session->read('Login.Id')));?>
+
+<?php echo $this->Form->hidden('id', array('value' => $this->request->data['Project']['id']));?>
+
+<?php echo $this->Form->submit('変更を行う',array('class'=>'btn btn-success btn-large btn-block'));?>
+<?php echo $this->Form->end();?>
 </div>
+

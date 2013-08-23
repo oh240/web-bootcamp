@@ -50,7 +50,7 @@
 
     <?php endforeach; ?>
      <div class="text-right">
-     <?php echo $this->Html->link('タスクリストへ移動する',array('controller' => 'projects','id'=>$project['Project']['id'],'action' => 'tasklist'),array('class'=>'btn btn-success')); ?>
+     <?php echo $this->Html->link('タスクリストへ移動する',array('controller' => 'projects','id'=>$project['Project']['id'],'action' => 'tasklist'),array('class'=>'btn btn-success btn-large btn-block')); ?>
      </div>
 
 </div>
@@ -60,8 +60,25 @@
 <div class="well">
 
 	<div class="text-right">
-		<?php echo $this->Html->link('掲示板一覧へ移動する',array('controller' => 'threads','project_id'=>$project['Project']['id'],'action' => 'index'),array('class'=>'btn btn-success')); ?>
+		<?php echo $this->Html->link('掲示板一覧へ移動する',array('controller' => 'threads','project_id'=>$project['Project']['id'],'action' => 'index'),array('class'=>'btn btn-success btn-large btn-block')); ?>
 	</div>
 
 </div>
+
+<?php if($project['Project']['user_id'] == $this->Session->read('Login.Id')): ?>
+
+<h3>プロジェクト作成者管理権限</h3>
+
+<div class="well clearfix">
+<p>
+    <?php echo $this->Html->link('<i class="icon-pencil icon-white"></i> プロジェクトの編集',array('action'=>'edit','id'=>$project['Project']['id']),array('class'=>'btn btn-info btn-large btn-block','escape'=>false));?>
+</p>
+<p>
+    <?php echo $this->Form->postLink('<i class="icon-trash icon-white"></i> プロジェクトの削除',array('action'=>'delete','id'=>$project['Project']['id']),array('class'=>'btn btn-danger btn-large btn-block','escape'=>false),'プロジェクトをを削除しますがよろしいですか？（サブタスクも削除されます。）');?>
+</p>
+
+
+</div>
+
+<?php endif;?>
 
