@@ -50,6 +50,5 @@
 </div>
 <br>
 <div class="text-right">
-	<?php echo $this->Html->link('新規スレッド追加',
-		array('project_id'=>$thread['Project']['id'],'controller'=>'threads','action'=>'add'),array('class'=>'btn btn-large btn-success'));?>
+    <?php echo $this->Html->link('新規スレッド追加',array('controller' => 'threads','project_id'=>$this->params['project_id'],'action' => 'add'),array('class'=>'btn btn-success')); ?>
 </div>

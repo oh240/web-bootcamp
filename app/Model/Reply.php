@@ -71,7 +71,7 @@ class Reply extends AppModel {
 		),
 	);
 
-	function findReplies($thread_id,$limit = 2) {
+	function findReplies($thread_id,$limit = 5) {
 
 		$options = array(
 			'limit' => $limit,
