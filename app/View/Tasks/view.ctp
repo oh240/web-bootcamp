@@ -6,7 +6,7 @@
 <br>
 <div class="tasks view">
 	<?php if ($task['Task']['status'] == 1):?>
-	<h3 class="checkbox end">
+<h3 class="checkbox end">
 		<?php echo $this->Form->postLink('<input type="checkbox" class="check_big" checked="checked"> ', array('controller' => 'tasks', 'id'=>$task['Task']['id'],'action' => 'unchk'), array('escape' => false)); ?>
 	<?php else :?>
 	<h3 class="checkbox">
