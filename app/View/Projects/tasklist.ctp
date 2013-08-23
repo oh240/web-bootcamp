@@ -1,5 +1,5 @@
 <?php
-$this->Html->addCrumb($project['Project']['name'],array('controller'=>'projects','action'=>'view',$project['Project']['id']));
+$this->Html->addCrumb($project['Project']['name'],array('controller'=>'projects','action'=>'view','id'=>$project['Project']['id']));
     $this->Html->addCrumb('タスクリスト',array());
 ?>
 <h2>
@@ -39,10 +39,10 @@ $this->Html->addCrumb($project['Project']['name'],array('controller'=>'projects'
                          <?php endif;?>
                             <?php echo $task['id']?>
                             </span>
-                        <?php echo $this->Form->postLink('<input type="checkbox">', array('controller' => 'tasks', 'action' => 'chk', $task['id']), array('escape' => false)); ?>
-                        <?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('controller' => 'tasks', 'action' => 'delete', $task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>
-											<?php echo $this->Html->link('<i class="icon-pencil"></i>', array('controller' => 'tasks', 'action' => 'edit',$task['id']),array('escape' => false)); ?>
-												<?php echo $this->Html->link($task['name'],array('controller'=>'tasks','action'=>'view',$task['id']));?>
+                        <?php echo $this->Form->postLink('<input type="checkbox">', array('controller' => 'tasks', 'action' => 'chk','id'=>$task['id']), array('escape' => false)); ?>
+                        <?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('controller' => 'tasks', 'action' => 'delete','id'=>$task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？',$task['id']); ?>
+											<?php echo $this->Html->link('<i class="icon-pencil"></i>', array('controller' => 'tasks', 'action' => 'edit','id'=>$task['id']),array('escape' => false)); ?>
+												<?php echo $this->Html->link($task['name'],array('controller'=>'tasks','action'=>'view','id'=>$task['id']));?>
                        </div>
 
                     </li>
@@ -86,8 +86,8 @@ $this->Html->addCrumb($project['Project']['name'],array('controller'=>'projects'
                       <li id="task_<?php echo $task['id']; ?>" class="end">
                        <div class="checkbox">
                           <?php echo $task['id']; ?>
-                          <?php echo $this->Form->postLink('<input type="checkbox" checked="checked">', array('controller' => 'tasks', 'action' => 'unchk', $task['id']), array('escape' => false)); ?>
-                         <?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('controller' => 'tasks', 'action' => 'delete', $task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>
+                          <?php echo $this->Form->postLink('<input type="checkbox" checked="checked">', array('controller' => 'tasks', 'action' => 'unchk', 'id'=>$task['id']), array('escape' => false)); ?>
+                         <?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('controller' => 'tasks', 'action' => 'delete', 'id'=>$task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>
                           <?php echo $this->Html->link($task['name'],array('controller'=>'tasks','action'=>'view',$task['id']));?>
                        </div>
 

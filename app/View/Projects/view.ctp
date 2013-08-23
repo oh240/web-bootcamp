@@ -50,7 +50,7 @@
 
     <?php endforeach; ?>
      <div class="text-right">
-     <?php echo $this->Html->link('タスクリストへ移動する',array('controller' => 'projects', 'action' => 'tasklist', $project['Project']['id']),array('class'=>'btn btn-success')); ?>
+     <?php echo $this->Html->link('タスクリストへ移動する',array('controller' => 'projects','id'=>$project['Project']['id'],'action' => 'tasklist'),array('class'=>'btn btn-success')); ?>
      </div>
 
 </div>
@@ -59,4 +59,9 @@
 
 <div class="well">
 
+	<div class="text-right">
+		<?php echo $this->Html->link('掲示板一覧へ移動する',array('controller' => 'threads','project_id'=>$project['Project']['id'],'action' => 'index'),array('class'=>'btn btn-success')); ?>
+	</div>
+
 </div>
+

@@ -51,4 +51,37 @@ class Reply extends AppModel {
 			),
 		),
 	);
+
+	public $belongsTo = array(
+		'Thread' => array(
+			'className' => 'Thread',
+			'foreignKey' => 'thread_id',
+			'conditions' => '',
+      'dependent' => true,
+			'fields' => '',
+			'order' => ''
+		),
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id',
+			'conditions' => '',
+      'dependent' => true,
+			'fields' => '',
+			'order' => ''
+		),
+	);
+
+	function findReplies($thread_id,$limit = 2) {
+
+		$options = array(
+			'limit' => $limit,
+			'order'=>array(
+				'Reply.created'=>'DESC'
+			),
+			'conditions' => array('Reply.thread_id'=>$thread_id),
+		);
+
+		return $options;
+
+	}
 }

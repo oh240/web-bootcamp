@@ -78,7 +78,7 @@ class TasksController extends AppController {
             if ($this->Task->save($this->request->data)) {
                 $this->Session->setFlash('タスクの変更を保存しました','flash_success');
 				$project_id = $this->Session->read('Act_Project.id');
-                $this->redirect(array('controller'=>'projects','action' => 'tasklist',$project_id));
+                $this->redirect(array('controller'=>'projects','action' => 'tasklist','id'=>$project_id));
             } else {
                 $this->Session->setFlash('タスクの変更を保存できませんでした。','flash_error');
             }

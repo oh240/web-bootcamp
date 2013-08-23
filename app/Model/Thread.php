@@ -76,4 +76,54 @@ class Thread extends AppModel {
 			),
 		),
 	);
+
+	public $belongsTo = array(
+		'Project' => array(
+			'className' => 'Project',
+			'foreignKey' => 'project_id',
+			'conditions' => '',
+      'dependent' => true,
+			'fields' => '',
+			'order' => ''
+		),
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id',
+			'conditions' => '',
+      'dependent' => true,
+			'fields' => '',
+			'order' => ''
+		),
+	);
+
+	public $hasMany = array(
+		'Reply' => array(
+			'className' => 'Reply',
+			'foreignKey' => 'thread_id',
+			'conditions' => '',
+      'dependent' => true,
+			'fields' => '',
+			'order' => ''
+		),
+	);
+
+	function findThread($project_id = null ,$limit = 10) {
+
+		if ($project_id != null) {
+				$conditions = array('Thread.project_id'=>$project_id);
+		} else {
+				$conditions = array();
+		}
+		$options = array(
+			'limit' => $limit,
+			'order'=>array(
+				'Thread.modified'=>'DESC'
+			),
+			'conditions' => $conditions,
+		);
+
+		return $options;
+
+	}
+
 }

@@ -1,16 +1,16 @@
 <?php
-				$this->Html->addCrumb($task['Todo']['Project']['name'],array('controller'=>'projects','action'=>'tasklist',$task['Todo']['project_id']));
-				$this->Html->addCrumb('タスクリスト',array('controller'=>'projects','action'=>'tasklist',$task['Todo']['project_id']));
+				$this->Html->addCrumb($task['Todo']['Project']['name'],array('controller'=>'projects','action'=>'tasklist','id'=>$task['Todo']['project_id']));
+				$this->Html->addCrumb('タスクリスト',array('controller'=>'projects','action'=>'tasklist','id'=>$task['Todo']['project_id']));
 		$this->Html->addCrumb($task['Task']['name'],array(),array('class'=>'active'));
 ?>
 <br>
 <div class="tasks view">
 	<?php if ($task['Task']['status'] == 1):?>
 	<h3 class="checkbox end">
-		<?php echo $this->Form->postLink('<input type="checkbox" class="check_big" checked="checked"> ', array('controller' => 'tasks', 'action' => 'unchk', $task['Task']['id']), array('escape' => false)); ?>
+		<?php echo $this->Form->postLink('<input type="checkbox" class="check_big" checked="checked"> ', array('controller' => 'tasks', 'id'=>$task['Task']['id'],'action' => 'unchk'), array('escape' => false)); ?>
 	<?php else :?>
 	<h3 class="checkbox">
-		<?php echo $this->Form->postLink('<input type="checkbox" class="check_big">', array('controller' => 'tasks', 'action' => 'chk', $task['Task']['id']), array('escape' => false)); ?>
+		<?php echo $this->Form->postLink('<input type="checkbox" class="check_big">', array('controller' => 'tasks', 'id'=>$task['Task']['id'],'action' => 'chk',), array('escape' => false)); ?>
 	<?php endif ;?>
 	<?php echo h($task['Task']['name']);?>
 	</h3>
@@ -26,7 +26,7 @@
 				<img src="http://placekitten.com/64/64" />
 		  </a>
 		  <?php if($comment['user_id'] === $this->Session->read('Login.Id')):?>
-				<?php echo $this->Form->postLink('<i class="icon-trash pull-right"></i>', array('controller' => 'comments', 'action' => 'delete', $comment['id']), array('escape' => false),'コメントを削除しますがよろしいですか？'); ?>
+				<?php echo $this->Form->postLink('<i class="icon-trash pull-right"></i>', array('controller' => 'comments', 'action' => 'delete', 'id'=>$comment['id']), array('escape' => false),'コメントを削除しますがよろしいですか？'); ?>
 			<?php endif; ?>
 			<div class="media-body">
 		    <h5 class="media-heading">
@@ -43,7 +43,7 @@
 		</div>
 	<?php endforeach ;?>
 
-		<div class="well comment-form">
+	<div class="well comment-form">
 
 		<h4>コメントを投稿する</h4>
 

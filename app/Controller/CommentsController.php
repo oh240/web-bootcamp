@@ -28,6 +28,7 @@ class CommentsController extends AppController {
 				$this->redirect($this->referer());
 			} else {
 				$this->Session->setFlash('コメントの投稿に失敗しました','flash_error');
+				$this->redirect($this->referer());
 			}
 		}
 	}

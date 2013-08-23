@@ -14,7 +14,6 @@ class RepliesController extends AppController {
  * @var array
  */
 	public $components = array('Paginator');
-
 /**
  * add method
  *
@@ -25,9 +24,10 @@ class RepliesController extends AppController {
 			$this->Reply->create();
 			if ($this->Reply->save($this->request->data)) {
 				$this->Session->setFlash(__('The reply has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect($this->referer());
 			} else {
 				$this->Session->setFlash(__('The reply could not be saved. Please, try again.'));
+				$this->redirect($this->referer());
 			}
 		}
 	}
@@ -46,10 +46,10 @@ class RepliesController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Reply->delete()) {
-			$this->Session->setFlash(__('Reply deleted'));
-			$this->redirect(array('action' => 'index'));
+			$this->Session->setFlash('リプライの削除に成功しました','flash_success');
+			$this->redirect($this->referer());
 		}
-		$this->Session->setFlash(__('Reply was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		$this->Session->setFlash('リプライの削除に失敗しました','flash_error');
+		$this->redirect($this->referer());
 	}
 }

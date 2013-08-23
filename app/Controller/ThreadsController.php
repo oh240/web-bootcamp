@@ -13,16 +13,17 @@ class ThreadsController extends AppController {
  *
  * @var array
  */
+	public $uses = array('Thread','Reply');
 	public $components = array('Paginator');
-
 /**
  * index method
  *
  * @return void
  */
-	public function index() {
+	public function index($project_id = null) {
 		$this->Thread->recursive = 0;
-		$this->set('threads', $this->Paginator->paginate());
+		$this->paginate = $this->Thread->findThread($project_id);
+		$this->set('threads', $this->paginate());
 	}
 
 /**
@@ -37,7 +38,11 @@ class ThreadsController extends AppController {
 			throw new NotFoundException(__('Invalid thread'));
 		}
 		$options = array('conditions' => array('Thread.' . $this->Thread->primaryKey => $id));
+		//$this->Thread->recursive = 2;
 		$this->set('thread', $this->Thread->find('first', $options));
+		$this->paginate = $this->Reply->findReplies($id);
+		$this->set('replies', $this->paginate('Reply'));
+
 	}
 
 /**
@@ -50,9 +55,10 @@ class ThreadsController extends AppController {
 			$this->Thread->create();
 			if ($this->Thread->save($this->request->data)) {
 				$this->Session->setFlash(__('The thread has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect($this->referer());
 			} else {
 				$this->Session->setFlash(__('The thread could not be saved. Please, try again.'));
+				$this->redirect($this->referer());
 			}
 		}
 	}

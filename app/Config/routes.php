@@ -35,26 +35,74 @@ Router::connect('/', array('controller' => 'projects', 'action' => 'index', 'hom
  */
 Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
+
+/*----------------------
+				Users
+------------------------*/
+
+Router::connect('/users/:action/:id', array('controller' => 'users'), array('pass' => array('id'), 'id' => '[0-9]+'));
+
+Router::connect('/users/:action', array('controller' => 'users'));
+
+
+/*----------------------
+				Projects
+------------------------*/
+
 Router::connect('/projects/:id', array('controller' => 'projects', 'action' => 'view'), array('pass' => array('id'), 'id' => '[0-9]+'));
 
 Router::connect('/projects/:id/edit', array('controller' => 'projects', 'action' => 'edit'), array('pass' => array('id'), 'id' => '[0-9]+'));
 
 Router::connect('/projects/:id/delete', array('controller' => 'projects', 'action' => 'delete'), array('pass' => array('id'), 'id' => '[0-9]+'));
 
-Router::connect('/projects/', array('controller' => 'projects', 'action' => 'index'));
+Router::connect('/projects/add', array('controller' => 'projects', 'action' => 'edit'), array('pass' => array('id'), 'id' => '[0-9]+'));
 
-Router::connect('/projects/index/', array('controller' => 'projects', 'action' => 'index'));
+Router::connect('/projects/index', array('controller' => 'projects', 'action' => 'index'));
 
-Router::connect('/projects/tasklist/:id', array('controller' => 'projects', 'action' => 'tasklist'),array('pass'=>array('id'),'id'=>'[0-9]+'));
+Router::connect('/projects/:id/tasklist', array('controller' => 'projects', 'action' => 'tasklist'),array('pass'=>array('id'),'id'=>'[0-9]+'));
 
 Router::connect('/projects/:project_id/todos/:id', array('controller' => 'todos', 'action' => 'view'), array('pass' => array('project_id', 'id'),
     'project_id' => '[0-9]+', 'id' => '[0-9]+'));
 
-Router::connect('/projects/:project_id/todos/:todo_id/tasks/add', 
-array('controller' => 'tasks','action'=>'add'), array('pass' => array('project_id','todo_id','id'),'project_id' => '[0-9]+','todo_id' => '[0-9]+','id' => '[0-9]+'));
-
-Router::connect('/tasks/unchk/:id', 
+/*----------------------
+				Tasks
+------------------------*/
+Router::connect('/tasks/:id/edit',
+array('controller' => 'tasks','action'=>'edit'), array('pass' => array('id'),'id' => '[0-9]+'));
+Router::connect('/tasks/:id/delete',
+array('controller' => 'tasks','action'=>'delete'), array('pass' => array('id'),'id' => '[0-9]+'));
+Router::connect('/tasks/:id/unchk',
 array('controller' => 'tasks','action'=>'unchk'), array('pass' => array('id'),'id' => '[0-9]+'));
+Router::connect('/tasks/:id/chk',
+array('controller' => 'tasks','action'=>'chk'), array('pass' => array('id'),'id' => '[0-9]+'));
+Router::connect('/tasks/:id',
+array('controller' => 'tasks','action'=>'view'), array('pass' => array('id'),'id' => '[0-9]+'));
+Router::connect('/tasks/add',
+array('controller' => 'tasks','action'=>'add'));
+Router::connect('/tasks',
+array('controller' => 'tasks','action'=>'index'));
+
+
+Router::connect('/comments/:action', array('controller' => 'comments'), array('pass' => array('id'), 'id' => '[0-9]+'));
+
+/*----------------------
+				Threads
+------------------------*/
+Router::connect('/projects/:project_id/threads/all/*', array('controller' => 'threads','action'=>'index'),array('pass'=>array('project_id'),'project_id'=>'[0-9]+'));
+
+Router::connect('/projects/:project_id/threads/:id/*', array('controller' => 'threads','action'=>'view'),array('pass'=>array('project_id','id'),'project_id'=>'[0-9]+','id'=>'[0-9]+'));
+
+Router::connect('/projects/:project_id/threads/:id/delete', array('controller' => 'threads','action'=>'delete'),array('pass'=>array('project_id','id'),'project_id'=>'[0-9]+','id'=>'[0-9]+'));
+
+Router::connect('/projects/:project_id/threads/add', array('controller' => 'thread','action'=>'add'),array('pass'=>array('project_id','id'),'project_id'=>'[0-9]+','id'=>'[0-9]+'));
+
+Router::connect('/projects/:project_id/threads/:id/edit', array('controller' => 'threads','action'=>'edit'),array('pass'=>array('project_id','id'),'project_id'=>'[0-9]+','id'=>'[0-9]+'));
+
+
+
+Router::connect('/replies/:action', array('controller' => 'replies'));
+
+
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on
@@ -66,6 +114,6 @@ CakePlugin::routes();
  * Load the CakePHP default routes. Only remove this if you do not want to use
  * the built-in default routes.
  */
-require CAKE . 'Config' . DS . 'routes.php';
+//require CAKE . 'Config' . DS . 'routes.php';
 
 
