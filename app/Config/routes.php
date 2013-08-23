@@ -63,14 +63,13 @@ Router::connect('/projects/:id/edit', array('controller' => 'projects', 'action'
 
 Router::connect('/projects/:id/delete', array('controller' => 'projects', 'action' => 'delete'), array('pass' => array('id'), 'id' => '[0-9]+'));
 
-Router::connect('/projects/add', array('controller' => 'projects', 'action' => 'edit'), array('pass' => array('id'), 'id' => '[0-9]+'));
+Router::connect('/projects/add', array('controller' => 'projects', 'action' => 'add'), array('pass' => array('id'), 'id' => '[0-9]+'));
 
 Router::connect('/projects/index', array('controller' => 'projects', 'action' => 'index'));
 
-Router::connect('/projects/:id/tasklist', array('controller' => 'projects', 'action' => 'tasklist'),array('pass'=>array('id'),'id'=>'[0-9]+'));
+Router::connect('/projects', array('controller' => 'projects', 'action' => 'index'));
 
-Router::connect('/projects/:project_id/todos/:id', array('controller' => 'todos', 'action' => 'view'), array('pass' => array('project_id', 'id'),
-    'project_id' => '[0-9]+', 'id' => '[0-9]+'));
+Router::connect('/projects/:id/tasklist', array('controller' => 'projects', 'action' => 'tasklist'),array('pass'=>array('id'),'id'=>'[0-9]+'));
 
 /*----------------------
 				Tasks

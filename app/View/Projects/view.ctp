@@ -34,10 +34,10 @@
 	                         <?php endif;?>
 	                            <?php echo $task['id']; ?>
 	                            </span>
-	                        <?php echo $this->Form->postLink('<input type="checkbox">', array('controller' => 'tasks', 'action' => 'chk', $task['id']), array('escape' => false)); ?>
-	                        <?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('controller' => 'tasks', 'action' => 'delete', 'id'=>$task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>
-									<?php echo $this->Html->link('<i class="icon-pencil"></i>', array('controller' => 'tasks', 'action' => 'edit',$task['id']),array('escape' => false)); ?>
-	                       	<?php echo $this->Html->link($task['name'],array('controller'=>'tasks','action'=>'view',$task['id']));?>
+	                        <?php echo $this->Form->postLink('<input type="checkbox">', array('controller' => 'tasks', 'action' => 'chk', 'id'=>$task['id']), array('escape' => false)); ?>
+	                        <?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('controller' => 'tasks', 'action' => 'delete', 'id'=>$task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？'); ?>
+									<?php echo $this->Html->link('<i class="icon-pencil"></i>', array('controller' => 'tasks', 'action' => 'edit','id'=>$task['id']),array('escape' => false)); ?>
+	                       	<?php echo $this->Html->link($task['name'],array('controller'=>'tasks','action'=>'view','id'=>$task['id']));?>
 	                       </div>
 
                     <?php endif ;?>

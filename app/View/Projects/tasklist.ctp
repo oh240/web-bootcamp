@@ -40,9 +40,9 @@ $this->Html->addCrumb($project['Project']['name'],array('controller'=>'projects'
                             <?php echo $task['id']?>
                             </span>
                         <?php echo $this->Form->postLink('<input type="checkbox">', array('controller' => 'tasks', 'action' => 'chk','id'=>$task['id']), array('escape' => false)); ?>
-                        <?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('controller' => 'tasks', 'action' => 'delete','id'=>$task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？',$task['id']); ?>
+                        <?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('controller' => 'tasks', 'action' => 'delete','id'=>$task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？'); ?>
 											<?php echo $this->Html->link('<i class="icon-pencil"></i>', array('controller' => 'tasks', 'action' => 'edit','id'=>$task['id']),array('escape' => false)); ?>
-												<?php echo $this->Html->link($task['name'],array('controller'=>'tasks','action'=>'view','id'=>$task['id']));?>
+												<?php echo $this->Html->link($task['name'],array('controller'=>'tasks','id'=>$task['id'],'action'=>'view'));?>
                        </div>
 
                     </li>
@@ -87,8 +87,8 @@ $this->Html->addCrumb($project['Project']['name'],array('controller'=>'projects'
                        <div class="checkbox">
                           <?php echo $task['id']; ?>
                           <?php echo $this->Form->postLink('<input type="checkbox" checked="checked">', array('controller' => 'tasks', 'action' => 'unchk', 'id'=>$task['id']), array('escape' => false)); ?>
-                         <?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('controller' => 'tasks', 'action' => 'delete', 'id'=>$task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？', $task['id']); ?>
-                          <?php echo $this->Html->link($task['name'],array('controller'=>'tasks','action'=>'view',$task['id']));?>
+                         <?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('controller' => 'tasks', 'action' => 'delete', 'id'=>$task['id']), array('escape' => false), 'タスクを削除しますがよろしいですか？'); ?>
+                          <?php echo $this->Html->link($task['name'],array('controller'=>'tasks','action'=>'view','id'=>$task['id']));?>
                        </div>
 
                       </li>
