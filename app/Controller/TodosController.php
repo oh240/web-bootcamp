@@ -68,18 +68,18 @@ class TodosController extends AppController {
      * @param string $id
      * @return void
      */
-    public function delete($id = null) {
-        $this->Todo->id = $id;
-        if (!$this->Todo->exists()) {
-            throw new NotFoundException(__('Invalid todo'));
-        }
-        $this->request->onlyAllow('post', 'delete');
-        if ($this->Todo->delete()) {
-            $this->Session->setFlash('メインタスクを削除しました。','flash_success');
-            $this->redirect($this->referer());
-        }
-        $this->Session->setFlash('メインタスクの削除に失敗しました。','flash_error');
-        $this->redirect($this->referer());
-    }
+	public function delete($id = null) {
+		$this->Todo->id = $id;
+		if (!$this->Todo->exists()) {
+			throw new NotFoundException(__('Invalid comment'));
+		}
+		$this->request->onlyAllow('post', 'delete');
+		if ($this->Todo->delete()) {
+			$this->Session->setFlash('メインタスクの削除に成功しました','flash_success');
+			$this->redirect($this->referer());
+		}
+		$this->Session->setFlash('メインタスクの投稿に失敗しました','flash_error');
+		$this->redirect($this->referer());
+	}
 
 }

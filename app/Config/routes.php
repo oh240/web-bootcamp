@@ -44,6 +44,14 @@ Router::connect('/users/:action/:id', array('controller' => 'users'), array('pas
 
 Router::connect('/users/:action', array('controller' => 'users'));
 
+/*----------------------
+				Todos
+------------------------*/
+
+Router::connect('/todos/:action/:id', array('controller' => 'todos'), array('pass' => array('id'), 'id' => '[0-9]+'));
+
+Router::connect('/todos/:action', array('controller' => 'todos'));
+
 
 /*----------------------
 				Projects
@@ -82,8 +90,13 @@ array('controller' => 'tasks','action'=>'add'));
 Router::connect('/tasks',
 array('controller' => 'tasks','action'=>'index'));
 
+/*----------------------
+				Comments
+------------------------*/
 
-Router::connect('/comments/:action', array('controller' => 'comments'), array('pass' => array('id'), 'id' => '[0-9]+'));
+Router::connect('/comments/:action', array('controller' => 'comments'));
+
+Router::connect('/comments/:action/:id', array('controller' => 'comments'), array('pass' => array('id'), 'id' => '[0-9]+'));
 
 /*----------------------
 				Threads
