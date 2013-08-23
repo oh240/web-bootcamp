@@ -32,12 +32,17 @@ class ProjectsController extends AppController {
 
     public function add() {
         if ($this->request->is('post')) {
-           $this->Project->create();
+            $this->Project->create();
             if ($this->Project->save($this->request->data)) {
-                $this->Session->setFlash('新規にプロジェクトを追加しました','flash_success');
-                $this->redirect(array('controller'=>'projects','action' => 'index'));
+                $this->Session->setFlash('新規にプロジェクトを追加しました', 'flash_success');
+                if ($this->redirect(array('controller' => 'projects', 'action' => 'index'))) {
+                    echo '成功';
+                } else {
+                    echo '失敗';
+                }
+                //$this->redirect(array('controller'=>'projects','action' => 'index'));
             } else {
-                $this->Session->setFlash('新規プロジェクトの追加に失敗しました','flash_error');
+                $this->Session->setFlash('新規プロジェクトの追加に失敗しました', 'flash_error');
                 $this->redirect($this->referer());
             }
         }
@@ -54,8 +59,8 @@ class ProjectsController extends AppController {
         if (!$this->Project->exists($id)) {
             throw new NotFoundException(__('Invalid project'));
         }
-		$this->set('title_for_layout', 'タスクリスト');
-		$this->Session->write('Act_Project.id',$id);
+        $this->set('title_for_layout', 'タスクリスト');
+        $this->Session->write('Act_Project.id', $id);
         $options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
         $this->set('project', $this->Project->find('first', $options));
         $this->Todo->recursive = 2;
@@ -76,23 +81,39 @@ class ProjectsController extends AppController {
      * @param string $id
      * @return void
      */
+
+    /*
     public function edit($id = null) {
         if (!$this->Project->exists($id)) {
-            throw new NotFoundException(__('Invalid project'));
+            throw new NotFoundException(__('Invalid task'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Project->save($this->request->data)) {
-                $this->Session->setFlash('プロジェクトの変更を保存しました','flash_success');
-                $this->redirect(array('action' => 'index'));
+                $this->Session->setFlash('タスクの変更を保存しました','flash_success');
+                $this->redirect(array('controller'=>'projects','action' => 'index'));
             } else {
-                $this->Session->setFlash('プロジェクトの変更を保存できませんでした','flash_error');
+                $this->Session->setFlash('タスクの変更を保存できませんでした。','flash_error');
             }
         } else {
-            $options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
+            $options = array('conditions' => array('Project.id' => $id));
             $this->request->data = $this->Project->find('first', $options);
         }
-        $users = $this->Project->User->find('list');
-        $this->set(compact('users'));
+    }
+    */
+
+    public function edit($id = null) {
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->Project->save($this->request->data)) {
+                $this->Session->setFlash('タスクの変更を保存しました','flash_success');
+                $this->redirect(array('controller'=>'projects','action' => 'index'));
+            } else {
+                $this->Session->setFlash('タスクの変更を保存できませんでした。','flash_error');
+            }
+        } else {
+            $options = array('conditions' => array('Project.id' => $id));
+            $this->request->data = $this->Project->find('first', $options);
+        }
+        //$this->redirect(array('controller'=>'projects','action'=>'index'));
     }
 
     /**
@@ -109,11 +130,12 @@ class ProjectsController extends AppController {
         }
         $this->request->onlyAllow('post', 'delete');
         if ($this->Project->delete()) {
-            $this->Session->setFlash('プロジェクトを削除しました','flash_success');
-            $this->redirect(array('action' => 'index'));
+            $this->Session->setFlash('プロジェクトを削除しました', 'flash_success');
+            //    $this->redirect('/');
+            $this->redirect(array('controller'=>'projects','action' => 'index'));
+        } else {
+        $this->Session->setFlash('プロジェクトを削除できませんでした', 'flash_error');
+        $this->redirect('/');
         }
-        $this->Session->setFlash('プロジェクトを削除できませんでした','flash_error');
-        $this->redirect(array('action' => 'index'));
     }
-
 }

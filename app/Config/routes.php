@@ -45,31 +45,30 @@ Router::connect('/users/:action/:id', array('controller' => 'users'), array('pas
 Router::connect('/users/:action', array('controller' => 'users'));
 
 /*----------------------
-				Todos
-------------------------*/
-
-Router::connect('/todos/:action/:id', array('controller' => 'todos'), array('pass' => array('id'), 'id' => '[0-9]+'));
-
-Router::connect('/todos/:action', array('controller' => 'todos'));
-
-
-/*----------------------
 				Projects
 ------------------------*/
 
-Router::connect('/projects/:id', array('controller' => 'projects', 'action' => 'view'), array('pass' => array('id'), 'id' => '[0-9]+'));
 
-Router::connect('/projects/:id/edit', array('controller' => 'projects', 'action' => 'edit'), array('pass' => array('id'), 'id' => '[0-9]+'));
+Router::connect('/projects/:id', array('controller' => 'projects','action' => 'view','id'), array('pass' => array('id'), 'id' => '[0-9]+'));
 
-Router::connect('/projects/:id/delete', array('controller' => 'projects', 'action' => 'delete'), array('pass' => array('id'), 'id' => '[0-9]+'));
+Router::connect('/projects/:id/:action', array('controller' => 'projects'), array('pass' => array('id'), 'id' => '[0-9]+'));
 
-Router::connect('/projects/add', array('controller' => 'projects', 'action' => 'add'), array('pass' => array('id'), 'id' => '[0-9]+'));
+Router::connect('/projects/:action', array('controller' => 'projects','action'));
 
 Router::connect('/projects/index', array('controller' => 'projects', 'action' => 'index'));
 
 Router::connect('/projects', array('controller' => 'projects', 'action' => 'index'));
 
 Router::connect('/projects/:id/tasklist', array('controller' => 'projects', 'action' => 'tasklist'),array('pass'=>array('id'),'id'=>'[0-9]+'));
+
+
+/*----------------------
+				Todos
+------------------------*/
+
+Router::connect('/todos/:action/:id', array('controller' => 'todos'), array('pass' => array('id'), 'id' => '[0-9]+'));
+
+Router::connect('/todos/:action', array('controller' => 'todos'));
 
 /*----------------------
 				Tasks
