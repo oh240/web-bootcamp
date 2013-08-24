@@ -103,7 +103,7 @@ textarea {
 	list-style: none;
 }
 
-.end_tasks,.subtasks {
+.end_tasks {
 	display:none;
 }
 
@@ -122,4 +122,8 @@ h3 input[type="checkbox"]{
 
 .table-date {
 	width: 25%;
+}
+
+.dn {
+    display: none;
 }

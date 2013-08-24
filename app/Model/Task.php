@@ -98,6 +98,7 @@ class Task extends AppModel {
             'className' => 'Todo',
             'foreignKey' => 'todo_id',
             'conditions' => '',
+            'dependent' => true,
             'fields' => '',
             'order' => ''
         ),

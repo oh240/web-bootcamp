@@ -31,7 +31,7 @@ class TodosController extends AppController {
                 $this->redirect($this->referer());
             } else {
                 $this->Session->setFlash('新規メインタスクの追加に失敗しました','flash_error');
-				$this->redirect($this->referer());
+        				$this->redirect($this->referer());
             }
         }
     }

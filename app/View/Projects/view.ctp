@@ -15,7 +15,7 @@
             <?php echo h($todo['Todo']['name']) ;?>
       </h4>
 
-        <div class="subtasks" id="subs<?php echo $todo['Todo']['id']; ?>">
+        <div class="subtasks dn" id="subs<?php echo $todo['Todo']['id']; ?>">
 					<ul class="act_tasks">
                 <?php foreach ($todo['Task'] as $task) : ?>
 
@@ -77,8 +77,6 @@
     <?php echo $this->Form->postLink('<i class="icon-trash icon-white"></i> プロジェクトの削除',array('action'=>'delete','id'=>$project['Project']['id']),array('class'=>'btn btn-danger btn-large btn-block','escape'=>false),'プロジェクトをを削除しますがよろしいですか？（サブタスクも削除されます。）');?>
 </p>
 
-
 </div>
 
 <?php endif;?>
-

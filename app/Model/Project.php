@@ -72,6 +72,14 @@ class Project extends AppModel {
 			'fields' => '',
 			'order' => '',
       'dependent' => true,  
+		),
+    'Thread' => array(
+			'className' => 'Thread',
+			'foreignKey' => 'project_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+      'dependent' => true,  
 		)
 	);
 

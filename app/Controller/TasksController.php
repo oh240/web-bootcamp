@@ -57,7 +57,7 @@ class TasksController extends AppController {
                 $this->Session->setFlash('タスクを追加しました','flash_success');
                 $this->redirect($this->referer());
             } else {
-                $this->Session->setFlash('タスクの追加ができませんでした。','flash_error');
+                $this->Session->setFlash('タスクの追加に失敗しました','flash_error');
 				$this->redirect($this->referer());
             }
         }
@@ -80,7 +80,7 @@ class TasksController extends AppController {
 				$project_id = $this->Session->read('Act_Project.id');
                 $this->redirect(array('controller'=>'projects','action' => 'tasklist','id'=>$project_id));
             } else {
-                $this->Session->setFlash('タスクの変更を保存できませんでした。','flash_error');
+                $this->Session->setFlash('タスクの変更を保存に失敗しました','flash_error');
             }
         } else {
             $options = array('conditions' => array('Task.' . $this->Task->primaryKey => $id));
@@ -105,7 +105,7 @@ class TasksController extends AppController {
             $this->Session->setFlash('タスクを削除しました','flash_success');
             $this->redirect($this->referer());
         }
-        $this->Session->setFlash('タスクを削除できませんでした','flash_error');
+        $this->Session->setFlash('タスクを削除に失敗しました','flash_error');
         $this->redirect($this->referer());
     }
 
@@ -123,8 +123,7 @@ class TasksController extends AppController {
             $this->Session->setFlash('タスクを未完了状態に変更しました','flash_success');
             $this->redirect($this->referer());
         }
-
-        $this->Session->setFlash('タスクの状態を変更できませんでした','flash_error');
+        $this->Session->setFlash('タスクの状態を変更に失敗しました','flash_error');
         $this->redirect($this->referer());
     }
 
@@ -140,8 +139,7 @@ class TasksController extends AppController {
             $this->Session->setFlash('タスクを完了状態に変更しました','flash_success');
             $this->redirect($this->referer());
         }
-
-        $this->Session->setFlash('タスクの状態を変更できませんでした','flash_error');
+        $this->Session->setFlash('タスクの状態を変更に失敗しました','flash_error');
         $this->redirect($this->referer());
     }
 

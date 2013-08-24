@@ -14,7 +14,7 @@ $this->Html->addCrumb($project['Project']['name'],array('controller'=>'projects'
 			<br>
         <h4>
               <?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('controller'=>'todos','action'=>'delete',$todo['Todo']['id']),array('escape'=>false),'メインタスクを削除しますがよろしいですか？（サブタスクも削除されます。）',$todo['Todo']['id']);?>
-							<i class="icon-chevron-right allow<?php echo $todo['Todo']['id']; ?>" onclick="hidesubs('<?php echo $todo['Todo']['id']; ?>');"></i>
+							<i class="icon-chevron-down allow<?php echo $todo['Todo']['id']; ?>" onclick="hidesubs('<?php echo $todo['Todo']['id']; ?>');"></i>
               <?php echo h($todo['Todo']['name']) ;?>
         </h4>
 
@@ -65,7 +65,7 @@ $this->Html->addCrumb($project['Project']['name'],array('controller'=>'projects'
 
                <?php echo $this->Form->create('Task',array('controller' => 'tasks', 'action' => 'add'));?>
                <?php echo $this->Form->input('Task.name',array('label'=>false));?>
-               <?php echo $this->Form->input('Task.rank',         array('type'=>'select','label'=>'優先度の設定','options'=>array('指定なし:(グレー)','低:(緑)','中:(黄)','高:(赤)')));?>
+               <?php echo $this->Form->input('Task.rank',array('type'=>'select','label'=>'優先度の設定','options'=>array('指定なし:(グレー)','低:(緑)','中:(黄)','高:(赤)')));?>
                 <?php echo $this->Form->hidden('Task.todo_id',array('value'=>$todo['Todo']['id']));?>
 
                 <?php echo $this->Form->hidden('Task.user_id', array('value' => $this->Session->read('Login.Id')));?>
@@ -111,9 +111,7 @@ $this->Html->addCrumb($project['Project']['name'],array('controller'=>'projects'
         <h4>新規メインタスクの追加</h4>
         <br />
         <?php echo $this->Form->create('Todo',array('controller' => 'todos', 'action' => 'add'));?>
-
-        <?php echo $this->Form->input('Todo.name', array('label' => false)); ?>
-         <br />
+        <?php echo $this->Form->input('Todo.name', array('label'=>false));?>
         <?php echo $this->Form->hidden('Todo.user_id', array('value' => $this->Session->read('Login.Id')));?>
 
         <?php echo $this->Form->hidden('Todo.project_id', array('value' => $project['Project']['id']));?>
@@ -122,8 +120,3 @@ $this->Html->addCrumb($project['Project']['name'],array('controller'=>'projects'
         <?php echo $this->Form->end(); ?>
     </div>
 </div>
-
-
-
-
-

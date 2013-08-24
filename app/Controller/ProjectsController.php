@@ -81,26 +81,6 @@ class ProjectsController extends AppController {
      * @param string $id
      * @return void
      */
-
-    /*
-    public function edit($id = null) {
-        if (!$this->Project->exists($id)) {
-            throw new NotFoundException(__('Invalid task'));
-        }
-        if ($this->request->is('post') || $this->request->is('put')) {
-            if ($this->Project->save($this->request->data)) {
-                $this->Session->setFlash('タスクの変更を保存しました','flash_success');
-                $this->redirect(array('controller'=>'projects','action' => 'index'));
-            } else {
-                $this->Session->setFlash('タスクの変更を保存できませんでした。','flash_error');
-            }
-        } else {
-            $options = array('conditions' => array('Project.id' => $id));
-            $this->request->data = $this->Project->find('first', $options);
-        }
-    }
-    */
-
     public function edit($id = null) {
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Project->save($this->request->data)) {

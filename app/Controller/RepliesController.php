@@ -23,10 +23,10 @@ class RepliesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Reply->create();
 			if ($this->Reply->save($this->request->data)) {
-				$this->Session->setFlash(__('The reply has been saved'));
+				$this->Session->setFlash('リプライを新規追加しました','flash_success');
 				$this->redirect($this->referer());
 			} else {
-				$this->Session->setFlash(__('The reply could not be saved. Please, try again.'));
+				$this->Session->setFlash('リプライの新規追加に失敗しました','flash_error');
 				$this->redirect($this->referer());
 			}
 		}

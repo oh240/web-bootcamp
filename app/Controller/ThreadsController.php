@@ -52,11 +52,11 @@ class ThreadsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Thread->create();
 			if ($this->Thread->save($this->request->data)) {
-				$this->Session->setFlash(__('The thread has been saved'));
+        $this->Session->setFlash('新規スレッドを追加しました','flash_success');
 				$this->redirect(array(
-					'controller'=>'threads','action'=>'index','project_id'=>$this->request->data['Thread']['project_id']));
+					'controller'=>'threads','action'=>'index','project_id'=>$twhis->request->data['Thread']['project_id']));
 			} else {
-				$this->Session->setFlash(__('The thread could not be saved. Please, try again.'));
+				$this->Session->setFlash('新規スレッド追加に失敗しました','flash_error');
 				$this->redirect($this->referer());
 			}
 		}
@@ -75,10 +75,10 @@ class ThreadsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Thread->save($this->request->data)) {
-				$this->Session->setFlash(__('The thread has been saved'));
+				$this->Session->setFlash('スレッドの内容を変更しました','flash_success');
 				$this->redirect(array('action' => 'view','project_id'=>$project_id,'id'=>$id));
 			} else {
-				$this->Session->setFlash(__('The thread could not be saved. Please, try again.'));
+				$this->Session->setFlash('スレッドの内容を変更ができませんでした','flash_error');
 			}
 		} else {
 			$options = array('conditions' => array('Thread.' . $this->Thread->primaryKey => $id));
@@ -93,17 +93,17 @@ class ThreadsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($project_id,$id = null) {
+	public function delete($project_id =null,$id = null) {
 		$this->Thread->id = $id;
 		if (!$this->Thread->exists()) {
 			throw new NotFoundException(__('Invalid thread'));
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Thread->delete()) {
-			$this->Session->setFlash(__('Thread deleted'));
+			$this->Session->setFlash('スレッドの削除が完了しました','flash_success');
       $this->redirect(array('controller'=>'threads','action' => 'index','project_id'=>$project_id));
 		}
-		$this->Session->setFlash(__('Thread was not deleted'));
+		$this->Session->setFlash('スレッドの削除に失敗しました','flash_error');
 		$this->redirect(array('controller'=>'threads','action' => 'index','project_id'=>$project_id));
 	}
 }
