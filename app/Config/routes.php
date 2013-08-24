@@ -103,11 +103,13 @@ Router::connect('/projects/:project_id/threads/all/*', array('controller' => 'th
 
 Router::connect('/projects/:project_id/threads/:id/delete', array('controller' => 'threads','action'=>'delete'),array('pass'=>array('project_id','id'),'project_id'=>'[0-9]+','id'=>'[0-9]+'));
 
-Router::connect('/projects/:project_id/threads/:id/*', array('controller' => 'threads','action'=>'view'),array('pass'=>array('project_id','id'),'project_id'=>'[0-9]+','id'=>'[0-9]+'));
-
 Router::connect('/projects/:project_id/threads/:id/edit', array('controller' => 'threads','action'=>'edit'),array('pass'=>array('project_id','id'),'project_id'=>'[0-9]+','id'=>'[0-9]+'));
 
 Router::connect('/projects/:project_id/threads/add', array('controller' => 'threads','action'=>'add'),array('pass'=>array('project_id'),'project_id'=>'[0-9]+'));
+
+Router::connect('/projects/:project_id/threads/:id/*', array('controller' => 'threads','action'=>'view'),array('pass'=>array('project_id','id'),'project_id'=>'[0-9]+','id'=>'[0-9]+'));
+
+Router::connect('/replies/:action/:id', array('controller' => 'replies'),array('pass'=>array('id'),'id'=>'[0-9]+'));
 
 Router::connect('/replies/:action', array('controller' => 'replies'));
 

@@ -34,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Webbootcamp</a>
+          <?php echo $this->Html->link('Web Bootcamp',array('controller'=>'projects','action'=>'/'),array('class'=>'brand'));?>
           <div class="nav-collapse collapse navbar-responsive-collapse">
             <ul class="nav pull-right">
             <li>

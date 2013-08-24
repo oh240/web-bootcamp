@@ -6,15 +6,16 @@
 <table class="table table-bordered table-hover">
 		<tr>
 			<th><i class="icon-comment"></i> スレッド名</th>
-			<th><i class="icon-time"></i> 日時</th>
+			<th><i class="icon-wrench"></i> 管理</th>
 		</tr>
 		<tr>
 			<td>
-				<?php echo $this->Html->link($thread['Thread']['title'],
-							array('action'=>'view',$thread['Thread']['id']));?>
+				<h4><?php echo h($thread['Thread']['title']);?></h4>
 			</td>
 			<td class="table-date">
-				<?php echo h($thread['Thread']['modified']);?>
+				<?php echo $this->Html->link('<i class="icon-pencil"></i> 編集', array('controller'=>'threads','action'=>'edit','project_id'=>$this->params['project_id'],'id'=>$this->params['id']),array('escape'=>false));?>
+				<br>
+				<?php echo $this->Form->postLink('<i class="icon-trash"></i> 削除', array('controller'=>'threads','action'=>'delete','project_id'=>$this->params['project_id'],'id'=>$this->params['id']),array('escape'=>false),'スレッドを削除しますがよろしいですか?');?>
 			</td>
 		</tr>
 
