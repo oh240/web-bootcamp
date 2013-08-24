@@ -54,7 +54,7 @@ class ThreadsController extends AppController {
 			if ($this->Thread->save($this->request->data)) {
         $this->Session->setFlash('新規スレッドを追加しました','flash_success');
 				$this->redirect(array(
-					'controller'=>'threads','action'=>'index','project_id'=>$twhis->request->data['Thread']['project_id']));
+					'controller'=>'threads','action'=>'index','project_id'=>$this->request->data['Thread']['project_id']));
 			} else {
 				$this->Session->setFlash('新規スレッド追加に失敗しました','flash_error');
 				$this->redirect($this->referer());
