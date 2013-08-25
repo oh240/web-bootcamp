@@ -13,7 +13,7 @@ class ThreadsController extends AppController {
  *
  * @var array
  */
-	public $uses = array('Thread','Reply');
+	public $uses = array('Thread','Reply','Project');
 	public $components = array('Paginator');
 /**
  * index method
@@ -22,8 +22,9 @@ class ThreadsController extends AppController {
  */
 	public function index($project_id = null) {
 		$this->Thread->recursive = 0;
-		$this->paginate = $this->Thread->findThread($project_id);
-		$this->set('threads', $this->paginate());
+    $this->paginate = $this->Thread->findThread($project_id);    $this->set('threads', $this->paginate());
+		$result = $this->Project->findById($project_id);
+    $this->set('project', $result);
 	}
 
 /**

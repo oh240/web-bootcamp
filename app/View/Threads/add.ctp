@@ -1,5 +1,5 @@
 	<?php
-		$this->Html->addCrumb('プロジェクト名','',array('controller'=>'projects','action'=>'view',));
+		$this->Html->addCrumb($this->Session->read('Act_Project.name'),array('controller'=>'projects','action'=>'view','id'=>$this->params['project_id']));
 		$this->Html->addCrumb('掲示板',array('action'=>'index','project_id'=>$this->params['project_id']),array('class'=>'active'));
 		$this->Html->addCrumb('新規スレッド追加',array(),array('class'=>'active'));
 ?>

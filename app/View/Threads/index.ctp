@@ -1,10 +1,10 @@
 <?php
-		$this->Html->addCrumb('プロジェクト名',array('controller'=>'projects','action'=>'view','id'=>$this->params['project_id']));
+		$this->Html->addCrumb($this->Session->read('Act_Project.name'),array('controller'=>'projects','action'=>'view','id'=>$this->params['project_id']));
 		$this->Html->addCrumb('掲示板',array(),array('class'=>'active'));
 ?>
+
 <h3>掲示板</h3>
 <hr>
-
 <table class="table table-bordered table-hover">
 		<tr>
 			<th><i class="icon-comment"></i> スレッド名</th>
@@ -21,7 +21,6 @@
 		</tr>
 		<?php endforeach;?>
 </table>
-
 <div class="text-center">
   <ul class="pager">
   	<?php

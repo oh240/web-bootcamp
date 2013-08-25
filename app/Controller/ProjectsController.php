@@ -60,9 +60,23 @@ class ProjectsController extends AppController {
             throw new NotFoundException(__('Invalid project'));
         }
         $this->set('title_for_layout', 'タスクリスト');
+        
         $this->Session->write('Act_Project.id', $id);
+        
         $options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
         $this->set('project', $this->Project->find('first', $options));
+        
+        $options = array(
+            'conditions' => array('Project.' . $this->Project->primaryKey => $id),
+            'fields' =>array('name'),
+        );
+        
+        $project_name = $this->Project->find('first',$options);
+        
+        //var_dump($project_name);
+        
+        $this->Session->write('Act_Project.name',$project_name['Project']['name']);
+            
         $this->Todo->recursive = 2;
         $options = array(
             'conditions' => array('Todo.project_id' => $id),
