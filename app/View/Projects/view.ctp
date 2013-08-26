@@ -11,6 +11,7 @@
 
       <h4>
             <?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('controller'=>'todos','action'=>'delete',$todo['Todo']['id']),array('escape'=>false),'メインタスクを削除しますがよろしいですか？（サブタスクも削除されます。）',$todo['Todo']['id']);?>
+            <?php echo $this->Html->link('<i class="icon-pencil"></i>', array('controller' => 'todos', 'action' => 'edit','id'=>$todo['Todo']['id']),array('escape' => false)); ?>
 						<i class="icon-chevron-right allow<?php echo $todo['Todo']['id']; ?>" onclick="hidesubs('<?php echo $todo['Todo']['id']; ?>');"></i>
             <?php echo h($todo['Todo']['name']) ;?>
       </h4>

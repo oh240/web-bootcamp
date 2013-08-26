@@ -1,21 +1,21 @@
-<div class="todos form">
-<?php echo $this->Form->create('Todo'); ?>
-	<fieldset>
-		<legend><?php echo __('Edit Todo'); ?></legend>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('name');
-		echo $this->Form->input('user_id');
-		echo $this->Form->input('status');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
+<?php
+		$this->Html->addCrumb($this->Session->read('Act_Project.name'),array('controller'=>'projects','action'=>'view','id'=>$this->Session->read('Act_Project.id')));
+    $this->Html->addCrumb('プロジェクトの編集',array(),array('class'=>'active'));
+?>
+<h2>メインタスクの名称変更</h2>
+<hr />
+<div class="well add_solo">
+<br />
+<?php echo $this->Form->create('Todo');?>
+<p>
+     <strong>メインタスクの名前</strong>
+</p>
+<?php echo $this->Form->input('name',array('label'=>false,'class'=>'span11','error'=>false));?>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Todo.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Todo.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Todos'), array('action' => 'index')); ?></li>
-	</ul>
+<?php echo $this->Form->hidden('user_id', array('value' => $this->Session->read('Login.Id')));?>
+
+<?php echo $this->Form->hidden('id', array('value' => $this->request->data['Todo']['id']));?>
+
+<?php echo $this->Form->submit('変更を行う',array('class'=>'btn btn-success btn-large btn-block'));?>
+<?php echo $this->Form->end();?>
 </div>
