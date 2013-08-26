@@ -1,4 +1,4 @@
-	<?php
+<?php
 		$this->Html->addCrumb($this->Session->read('Act_Project.name'),array('controller'=>'projects','action'=>'view','id'=>$this->params['project_id']));
 		$this->Html->addCrumb('掲示板',array('action'=>'index','project_id'=>$this->params['project_id']),array('class'=>'active'));
 		$this->Html->addCrumb('新規スレッド追加',array(),array('class'=>'active'));
@@ -10,9 +10,9 @@
 
     <?php echo $this->Form->create('Thread');?>
 			<p><strong>スレッドタイトル</strong></p>
-    	 <?php echo $this->Form->input('Thread.title',array('label'=>false));?>
+    	 <?php echo $this->Form->input('Thread.title',array('label'=>false,'error'=>false));?>
 			<p><strong>スレッド本文</strong></p>
-		 <?php echo $this->Form->input('Thread.body',array('label'=>false,'type'=>'textarea'));?>
+		 <?php echo $this->Form->input('Thread.body',array('label'=>false,'type'=>'textarea','error'=>false));?>
 
      <?php echo $this->Form->hidden('Thread.project_id',array('value'=>$this->params['project_id']));?>
 

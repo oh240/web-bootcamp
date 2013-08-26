@@ -6,12 +6,12 @@
 <p>
      <strong>スレッド名</strong>
 </p>
-<?php echo $this->Form->input('title',array('label'=>false,'class'=>'span11'));?>
+<?php echo $this->Form->input('title',array('label'=>false,'class'=>'span11','error'=>false));?>
 
 <p>
      <strong>スレッドの内容</strong>
 </p>
-<?php echo $this->Form->input('body',array('type'=>'textarea','label'=>false,'class'=>'span11'));?>
+<?php echo $this->Form->input('body',array('type'=>'textarea','label'=>false,'class'=>'span11','error'=>false));?>
 
 <?php echo $this->Form->hidden('project_id', array('value' => $this->params['project_id']));?>
 

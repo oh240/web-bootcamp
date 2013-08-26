@@ -10,7 +10,7 @@
 <p>
      <strong>プロジェクトの名前</strong>
 </p>
-<?php echo $this->Form->input('name',array('label'=>false,'class'=>'span11'));?>
+<?php echo $this->Form->input('name',array('label'=>false,'class'=>'span11','error'=>false));?>
 
 <?php echo $this->Form->hidden('user_id', array('value' => $this->Session->read('Login.Id')));?>
 
